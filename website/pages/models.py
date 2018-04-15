@@ -13,7 +13,7 @@ class Event(models.Model):
     event_location = models.CharField(max_length=200)
     event_info = models.TextField()
     rockSoc_event = models.BooleanField(default=False)
-    event_image = models.ImageField(upload_to='images/')
+    #event_image = models.ImageField(upload_to='images/')
     link_to_Facebook_event = models.CharField(max_length=200, blank=True, null=True)
 
     def publish(self):
