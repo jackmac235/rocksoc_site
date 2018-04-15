@@ -1,0 +1,34 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="content_big">
+			
+			<div class="side_title_backing_big" style="width:100%">
+				<h1 style="padding-top:12px;padding-bottom:12px;padding-left:30px">ABOUT</h1>
+			</div>
+			
+			<img src="{% static 'pages/images/panda.jpg' %}" style="width:45%;border:1px solid gray;margin: 20px 20px" align="right">
+			
+			<h3>What is Cambridge RockSoc?</h3>
+			<p>RockSoc is Cambridge's rock, metal, and alternative society!</p>
+			<p>Our aim is to bring together people interested in rock, metal and alternative music, and to support the alternative scene in Cambridge. To this end we run a 
+			monthly club night: Wake Up Screaming, organise at least one live gig per term, and have weekly pub meets to socialise. We may also organise other events such as 
+			trips to gigs elsewhere, and we attempt to keep a comprehensive record of all rock, metal, and alternative events happening in Cambridge.</p>
+
+			<h3>Who can join?</h3>
+			<p>Anyone can join and take advantage of what we offer. We are officially a Cambridge University society, but this has no bearing on our members; if it did we would 
+			go independent!</p>
+
+			<h3>What music do we cover?</h3>
+			<p>Our music tastes evolve with our members, but we try to cater for alternative music not covered elsewhere in Cambridge. The spectrum of interests in RockSoc ranges 
+			from <i>Grunge</i> to <i>Alternative</i> to <i>Classic Metal</i> to <i>70s Rock</i> to <i>Death</i> and <i>Black Metal</i> to <i>Hardcore</i> to <i>Punk</i> to 
+			<i>Grindcore</i> to <i>Goth</i> to <i>Industrial</i> and takes in a good few others along the way, so the chances are that whatever you like there'll be someone in 
+			RockSoc who agrees with you!</p>
+
+		</div>
+	</div>
+	
+{% endblock %}

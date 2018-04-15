@@ -1,0 +1,101 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="content_big">
+			
+			<!--{% if events.has_previous is False %}-->
+			<!--{% endif %}-->
+				
+				<!--<div class="side_title_backing" style="width:20%">
+					<h1 class="side_title">EVENTS</h1>
+				</div>-->
+				
+				<div class="side_title_backing_big" style="width:100%">
+					<h1 style="padding-top:12px;padding-bottom:12px;padding-left:30px">EVENTS</h1>
+				</div>
+				
+				<p>Below are listings of all alternative events we know about in Cambridge. If you know of an event not on this list, or are organising one, then contact the webmaster to have it added.</p>
+				<p>Scroll down to see more events. Official RockSoc events are labeled.</p>
+			
+				<!--<p class="sidebar_text" align="center"><img src="{% static 'pages/images/arrow_up.png' %}" style="width:20px" id="scroll_up"></p>-->
+			
+				<img src="{% static 'pages/images/arrow_up.png' %}" style="width:20px;display:block;margin:auto;padding-bottom:10px" id="scroll_up">
+				
+				<hr>
+				
+			<div class="event_window">
+				<div class="event_window_content">
+			
+				
+			
+				{% for event in events %}
+				
+					<table style="width:100%;border-collapse:collapse">
+						<tr>
+							<td style="width:8%"><h3 class="big_date" align="center">{{ event.date | date:"j M" }}</h3></td>
+							<td style="width:50%">
+								<table>
+									<tr>
+										<td style="border-left: 1px solid white; padding-left: 20px"><h3><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list_big">{{ event.event_name }}</a></h3></td>
+									</tr>
+								</table>
+							</td>
+							<td rowspan="3">
+								<div class="crop_medium">
+									<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><br>
+								<table>
+									<tr>
+										<td style="width:400px"><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+										{% if event.rockSoc_event %}
+											<td><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
+										{% endif %}
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>{{ event.event_info | truncatechars:200 }}</p></td> <!--urlize-->
+						</tr>
+					</table>
+		
+					{% if forloop.last == False %}
+						<hr style="border-color:rgb(100,100,100);border-style:solid">
+					{% endif %}
+			
+				{% endfor %}
+			
+				</div>
+			</div>
+			
+			<hr>
+			
+			<img src="{% static 'pages/images/arrow_down.png' %}" style="width:20px;display:block;margin:auto;padding-top:10px" id="scroll_down">
+			
+			<!--<p class="sidebar_text" align="center"><img src="{% static 'pages/images/arrow_down.png' %}" style="width:20px" id="scroll_down"></p>-->
+			<!--<br><br>Scroll in the above window to see more events</p>-->
+			
+			<!--<div>
+				<p align="right">Page {{ events.number }} of {{ events.paginator.num_pages }}</p>
+							
+				{% if events.has_previous %}
+					<p align="right">
+					<a href="?page={{ events.previous_page_number }}">Previous</a></p>
+				{% endif %}
+
+				{% if events.has_next %}
+					<p align="right"><a href="?page={{ events.next_page_number }}">Next</a></p>
+				{% endif %}
+			</div>-->
+			
+		</div>
+	</div>
+	
+{% endblock %}

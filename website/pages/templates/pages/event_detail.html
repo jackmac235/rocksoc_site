@@ -1,0 +1,58 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="content_big">
+			
+			<table style="width:60%;border-collapse:collapse">
+						<tr>
+							<td style="width:8%;padding-right:20px"><h1 class="big_date" align="center">{{ event.date | date:"j M" }}</h1></td>
+							<td>
+								<table>
+									<tr>
+										<td style="border-left: 1px solid white; padding-left:20px"><h1>{{ event.event_name }}</h1></td>
+									</tr>
+								</table>
+							</td>
+							<!--<td rowspan="2" style="padding:20px">
+								<div class="crop_big">
+									<img src="{{ event.event_image.url }}" style="width:100%">
+								</div>
+							</td>-->
+						</tr>
+							<img class="event_img_big" src="{{ event.event_image.url }}" align="right">
+						<tr>
+							<td colspan="2">
+								<table>
+									<tr>
+										<td style="width:450px"><h3>{{ event.date | date:"l jS F Y" }}<br>{{ event.start_time | date:"H:i" }} - {{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h3></td>
+										<!--{% if event.rockSoc_event %}
+											<td style="padding:20px"><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
+										{% endif %}-->
+									</tr>
+								</table>
+								<!--<h3>{{ event.date | date:"l jS F Y" }}<br>{{ event.start_time | date:"H:i" }} - {{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h3></td>-->
+							</td>
+						</tr>
+					</table>
+						<!--{% if event.rockSoc_event %}
+						<tr>
+							<td><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px;padding:10px"></td>
+						</tr>
+						{% endif %}-->
+						<!--<tr>
+							<td colspan="3"><p>Link to Facebook event: {{ event.link_to_Facebook_event | urlize }}</p><br>
+							<h3>Details:</h3>
+							<p>{{ event.event_info | linebreaksbr | urlize }}</p></td>
+						</tr>
+					</table>-->
+					<p>Link to Facebook event: {{ event.link_to_Facebook_event | urlize }}</p><br>
+					<h3>Details:</h3>
+					<p>{{ event.event_info | linebreaksbr | urlize }}</p></td>
+			
+		</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="container index">
+		<div class="content welcome">
+			
+			<div class="slideshow">
+				<img src="{% static 'pages/images/panda.jpg' %}"  style="width:100%">
+			</div>
+			
+				<!--<div>
+					<img src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
+				</div>
+				<div>
+					<img src="{% static 'pages/images/fun.jpg' %}" style="width:100%">
+				</div>-->
+			
+			<div class="side_title_backing">
+				<h3 class="main_welcome_heading">WELCOME TO CAMBRIDGE ROCKSOC!</h3>
+			</div>
+			
+			<!--<h3>WELCOME TO CAMBRIDGE ROCKSOC!</h3>-->
+			
+			<!--<div class="side_title_backing" style="width:63%">
+				<h3 class="side_title">WELCOME TO CAMBRIDGE ROCKSOC!</h3>
+			</div>-->
+			
+			<p>This is the official webpage of RockSoc, the Cambridge University society for all rock, metal, punk and alternative fans. We organise
+			termly events such as meet-ups, pub crawls, gigs and club nights. RockSoc is a great way of meeting like-minded rock and metal 
+			people in Cambridge!<br></p>
+			
+			<p>Please check out RockSoc on <a href="https://www.facebook.com/groups/camrocksoc" class="paragraph_link">Facebook</a> for the most up-to-date information.<br></p>
+			
+			<div class="side_title_backing" style="width:40%">
+				<p style="padding-top:8px;padding-bottom:8px;padding-left:12px"><a href="" class="paragraph_link">WAKE UP SCREAMING</a></p>
+			</div>
+			
+			<p>This is our club night at the <a href="https://www.facebook.com/QClubCambridge/" class="paragraph_link">Q Club</a>, taking place every third Friday of the month. If you are interested in DJing, contact the WUS officer. No experience is necessary for the first slot!</p>
+
+			<!--<p><a href="/events">Pub meets</a></p>-->
+			
+			<div class="side_title_backing" style="width:40%">
+				<p style="padding-top:8px;padding-bottom:8px;padding-left:12px"><a href="/events" class="paragraph_link">PUB MEETS</a></p>
+			</div>
+			
+			<p>We meet weekly on a Thursday at a random pub in Cambridge, hailed as “RockSoc on tour”. To find out where our next pub meet is, keep an eye on the events page.</p>
+			
+			<div class="side_title_backing" style="width:40%">
+				<p style="padding-top:8px;padding-bottom:8px;padding-left:12px"><a href="/events" class="paragraph_link">GIGS</a></p>
+			</div>
+			
+			<p>Gigs are organised at least once a term. If you are a band looking for a slot then contact the events officer.</p>
+
+			<div class="side_title_backing" style="width:40%">
+				<p style="padding-top:8px;padding-bottom:8px;padding-left:12px"><a href="/events" class="paragraph_link">OTHER EVENTS</a></p>
+			</div>
+			
+			<p>Here are listings of all rock, metal, and alternative events we know about in Cambridge. If you are organising such an event then contact the webmaster to have it added.</p>
+			
+			<!--<img src="{% static 'pages/images/.png' %}" style="width:100%">-->
+			
+			<!--<img class="thumbnail" src="{% static 'pages/images/bernard.jpg' %}" alt="Bernard">
+			<img class="thumbnail" src="{% static 'pages/images/towler.jpg' %}" alt="Towler">
+			<img class="thumbnail" src="{% static 'pages/images/hobbs.jpg' %}" alt="Hobbs">-->
+		
+		</div>	
+		<div class="content upcoming_events">
+			<!--<img src="{% static 'pages/images/background.png' %}" style="width:100%">-->
+			<div class="side_title_backing">
+				<a href="/events" style="text-decoration:none"><h3 class="side_title">UPCOMING EVENTS</h3></a>
+			</div>
+			
+			<img src="{% static 'pages/images/arrow_up.png' %}" style="width:15px;display:block;margin:auto;padding-bottom:10px" id="scroll_up_small">
+			
+			<!--<div class="event_window_small_border">-->
+			
+			<hr>
+			
+			<div class="event_window_small">
+				<div class="event_window_content">
+				
+					{% for event in events %}
+						
+							<!--<hr>-->
+							<table id="event_list">
+								<tr>
+									<td style="width:50%"><h4><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list">{{ event.event_name }}</a></h4></td>
+									<td rowspan="2">
+										<div class="crop_small">
+											<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><h5>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h5></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table>
+											<tr>
+												<td style="width:92%"><p class="sidebar_text">{{ event.event_info | truncatechars:100 }}</p></td>
+												<td><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							
+							{% if forloop.last == False %}
+								<hr style="border-color:rgb(100,100,100);border-style:solid">
+							{% endif %}
+						
+					{% endfor %}
+				
+				</div>
+			</div>	
+			<!--</div>-->
+			<hr>
+			
+			<img src="{% static 'pages/images/arrow_down.png' %}" style="width:15px;display:block;margin:auto;padding-top:10px" id="scroll_down_small">
+			
+		</div>
+		<div class="content news">
+			<div class="side_title_backing">
+				<a href="/news" style="text-decoration:none"><h3 class="side_title">NEWS</h3></a>
+			</div>
+			<p>The website is currently under refurbishment :)</p>
+			<p>The website is currently under refurbishment :)</p>
+			<p>The website is currently under refurbishment :)</p>
+			<p>The website is currently under refurbishment :)</p>
+			<p>The website is currently under refurbishment :)</p>
+			<p>The website is currently under refurbishment :)</p>
+		</div>
+	</div>
+	
+{% endblock %}
