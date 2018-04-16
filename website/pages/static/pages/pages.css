@@ -280,7 +280,15 @@ html {
 	margin: auto;
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px) {
+/*@media screen and (min-width: 900px) {
+	.logo {
+		width: 42%;
+		display: block;
+		margin: auto;
+	}
+}*/
+
+/*@media screen and (min-width: 600px) and (max-width: 800px) {
 	.logo {
 		width: 70%;
 		display: block;
@@ -294,7 +302,7 @@ html {
 		display: block;
 		margin: auto;
 	}
-}
+}*/
 
 /*Top navigation bar*/
 .topnav {
