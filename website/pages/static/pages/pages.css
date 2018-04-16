@@ -229,7 +229,7 @@ html {
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
 	.index {
 		grid-template-columns: 59% 40%;
 		/*grid-column-gap: 0.5%;
@@ -280,15 +280,7 @@ html {
 	margin: auto;
 }
 
-/*@media screen and (min-width: 900px) {
-	.logo {
-		width: 42%;
-		display: block;
-		margin: auto;
-	}
-}*/
-
-/*@media screen and (min-width: 600px) and (max-width: 800px) {
+@media screen and (min-width: 600px) and (max-width: 900px) {
 	.logo {
 		width: 70%;
 		display: block;
@@ -296,13 +288,13 @@ html {
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
 	.logo {
 		width: 42%;
 		display: block;
 		margin: auto;
 	}
-}*/
+}
 
 /*Top navigation bar*/
 .topnav {
@@ -471,7 +463,31 @@ table#event_list:hover {
 	height: 450px;
 	overflow: auto;
 	visibility: hidden;
-	margin-right: -18px;
+}
+
+.event_window {
+	/*width: 100%;*/
+	height: 550px;
+	overflow: auto;
+	visibility: hidden;
+}
+
+@media screen and (min-width: 1030px) {
+	.event_window_small {
+		/*width: 100%;*/
+		height: 450px;
+		overflow: auto;
+		visibility: hidden;
+		margin-right: -18px;
+	}
+	
+	.event_window {
+		/*width: 100%;*/
+		height: 550px;
+		overflow: auto;
+		visibility: hidden;
+		margin-right: -18px;
+	}
 }
 
 /*.event_window_small_border {
@@ -481,14 +497,6 @@ table#event_list:hover {
 	visibility: visible;
 	padding: 5px;
 }*/
-
-.event_window {
-	/*width: 100%;*/
-	height: 550px;
-	overflow: auto;
-	visibility: hidden;
-	margin-right: -18px;
-}
 
 .event_window_content {
 	/*background-image: url("images/faded_background.png");*/
