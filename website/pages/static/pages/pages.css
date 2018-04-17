@@ -215,6 +215,9 @@ html {
 	display: -ms-grid;
 	}
 
+
+/*.content is for the homepage only. For computer there is no additional padding since this is done for
+individual sections separately. For mobile there is padding since the individual sections don't exist.*/
 .content {
 	/*background-color: rgba(0,0,0,0.7);*/
 	background-image: url("images/fabric.png");
@@ -223,11 +226,10 @@ html {
 	border-style: solid;
 	border-color: white;
 	border-width: 0px;
-	/*padding: 40px;*/
-	/*padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	padding-bottom: 40px;*/
+	padding-left: 6%;
+	padding-right: 6%;
+	padding-top: 3%;
+	padding-bottom: 3%;
 }
 
 @media screen and (min-width:900px) {	
@@ -239,11 +241,11 @@ html {
 		border-style: solid;
 		border-color: white;
 		border-width: 0px;
-		/*padding: 40px;*/
-		padding-left: 6%;
+		/*padding-left: 6%;
 		padding-right: 6%;
 		padding-top: 3%;
-		padding-bottom: 3%;
+		padding-bottom: 3%;*/
+		
 	}
 }
 	
