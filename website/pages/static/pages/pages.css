@@ -126,19 +126,70 @@ html {
 .header {
 	display: grid;
     display: -ms-grid;
-    /*grid-template-columns: 75% 20% 5%;
-	-ms-grid-columns: 75% 20% 5%;*/
-	grid-template-columns: 96% 4%;
-	-ms-grid-columns: 96% 4%;
-    }
+	grid-template-columns: 100%;
+	-ms-grid-columns: 100%;
+}
 
-    .logo_section {
+.logo_section {
+	grid-column: 1 / 2;
+	-ms-grid-column: 1;
+	padding-top: 20px;
+}
+		
+/*.social_media {
+	grid-column: 2;
+	-ms-grid-column: 2;
+	padding: 10%;
+}*/
+
+@media screen and (min-width: 900px) {
+	.header {
+		display: grid;
+		display: -ms-grid;
+		/*grid-template-columns: 96% 4%;
+		-ms-grid-columns: 96% 4%;*/
+		grid-template-columns: 100%;
+		-ms-grid-columns: 100%;
+	}
+
+	.logo_section {
 		grid-column: 1 / 2;
-        -ms-grid-column: 1;
+		-ms-grid-column: 1;
 		padding-top: 20px;
 		padding-left: 20px;
-    }
-	
+	}
+			
+	/*.social_media {
+		grid-column: 2;
+		-ms-grid-column: 2;
+		padding: 10%;
+	}*/
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	.header {
+	display: grid;
+    display: -ms-grid;
+	/*grid-template-columns: 90% 10%;
+	-ms-grid-columns: 90% 10%;*/
+	grid-template-columns: 100%;
+	-ms-grid-columns: 100%;
+	}
+
+	.logo_section {
+		grid-column: 1 / 2;
+		-ms-grid-column: 1;
+		padding-top: 20px;
+		padding-left: 20px;
+	}
+			
+	/*.social_media {
+		grid-column: 2;
+		-ms-grid-column: 2;
+		padding: 10%;
+	}*/
+}
+
     /*.menu {
 		grid-column: 2 / 3; 
         -ms-grid-column: 2;
@@ -150,14 +201,6 @@ html {
 		-ms-grid-column: 2;
 		padding: 1.8%;
 	}*/
-	
-	.social_media {
-		grid-column: 2;
-		-ms-grid-column: 2;
-		padding: 10%;
-	}
-	
-	
 	
 /*Provides a grid layout for the content*/	
 .container {
@@ -478,7 +521,7 @@ table#event_list:hover {
 		height: 450px;
 		overflow: auto;
 		visibility: hidden;
-		margin-right: -18px;
+		/*margin-right: -18px;*/
 	}
 	
 	.event_window {
@@ -486,7 +529,7 @@ table#event_list:hover {
 		height: 550px;
 		overflow: auto;
 		visibility: hidden;
-		margin-right: -18px;
+		/*margin-right: -18px;*/
 	}
 }
 
@@ -528,9 +571,9 @@ img#event_img:hover {
 }
 
 .event_img_big {
-	width:35%;
-	border:1px solid gray;
-	margin:20px 20px
+	width: 35%;
+	border: 1px solid gray;
+	margin: 20px 20px
 }
 
 .paragraph_link {
