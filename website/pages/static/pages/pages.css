@@ -251,17 +251,35 @@ individual sections separately. For mobile there is padding since the individual
 	
 .content_big {
 	/*background-color: rgba(0,0,0,0.7);*/
-	background-image: url("images/fabric_big.png");
+	background-image: url("images/fabric2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	border-style: solid;
 	border-color: white;
 	border-width: 0px;
-	padding-left: 4%;
-	padding-right: 4%;
+	padding-left: 6%;
+	padding-right: 6%;
 	padding-top: 3%;
-	padding-bottom: 3%;
+	padding-bottom: 6%;
 }
+
+@media screen and (min-width:900px) {	
+	.content_big {
+		/*background-color: rgba(0,0,0,0.7);*/
+		background-image: url("images/fabric_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		border-style: solid;
+		border-color: white;
+		border-width: 0px;
+		padding-left: 4%;
+		padding-right: 4%;
+		padding-top: 3%;
+		padding-bottom: 6%;
+	}
+}
+
+
 
 /*.index {
 	grid-template-columns: 59% 40%;
@@ -288,12 +306,42 @@ individual sections separately. For mobile there is padding since the individual
 	-ms-grid-row: 2;
 }*/
 
-.mobile_hide {
+.mobile_show_800 {
+	display: block;
+}
+
+.mobile_hide_600 {
 	display: none;
 }
 
+.mobile_hide_800 {
+	display: none;
+}
+
+.mobile_hide_1000 {
+	display: none;
+}
+
+@media screen and (min-width: 800px) {
+	.mobile_show_800 {
+		display: none;
+	}
+}
+
 @media screen and (min-width: 600px) {
-	.mobile_hide {
+	.mobile_hide_600 {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.mobile_hide_800 {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.mobile_hide_1000 {
 		display: block;
 	}
 }
@@ -582,6 +630,18 @@ table#event_list:hover {
 .event_window_content {
 	/*background-image: url("images/faded_background.png");*/
 	visibility: visible;
+}
+
+.event_detail_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+@media screen and (min-width:800px) {
+	.event_detail_table {
+		width: 50%;
+		border-collapse: collapse;
+	}
 }
 
 img#scroll_down:hover {
