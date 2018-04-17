@@ -224,13 +224,13 @@ html {
 	border-color: white;
 	border-width: 0px;
 	/*padding: 40px;*/
-	padding-left: 6%;
-	padding-right: 6%;
-	padding-top: 3%;
-	padding-bottom: 3%;
+	/*padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 40px;*/
 }
 
-@media screen and (max-width:900px) {
+@media screen and (min-width:900px) {	
 	.content {
 		/*background-color: rgba(0,0,0,0.7);*/
 		background-image: url("images/fabric.png");
@@ -240,10 +240,10 @@ html {
 		border-color: white;
 		border-width: 0px;
 		/*padding: 40px;*/
-		/*padding-left: 40px;
-		padding-right: 40px;
-		padding-top: 20px;
-		padding-bottom: 40px;*/
+		padding-left: 6%;
+		padding-right: 6%;
+		padding-top: 3%;
+		padding-bottom: 3%;
 	}
 }
 	
