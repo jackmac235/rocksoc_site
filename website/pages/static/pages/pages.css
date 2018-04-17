@@ -106,9 +106,17 @@ html {
 }
 
 .side_title_backing_big {
-	background-image: url("images/side_title_backing_big.png");
+	background-image: url("images/side_title_backing2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+@media screen and (min-width:800px) {
+	.side_title_backing_big {
+		background-image: url("images/side_title_backing_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
 }
 
 /*.side_title_backing:hover {
@@ -257,8 +265,8 @@ individual sections separately. For mobile there is padding since the individual
 	border-style: solid;
 	border-color: white;
 	border-width: 0px;
-	padding-left: 6%;
-	padding-right: 6%;
+	padding-left: 8%;
+	padding-right: 8%;
 	padding-top: 3%;
 	padding-bottom: 6%;
 }
@@ -681,4 +689,19 @@ img#event_img:hover {
 
 .paragraph_link:hover {
 	color: gray;
+}
+
+.about_img {
+	width: 100%;
+	border: 1px solid gray;
+	margin: auto;
+	margin-bottom: 5%;
+}
+
+@media screen and (min-width:800px) {
+	.about_img {
+		width: 45%;
+		border: 1px solid gray;
+		margin: 20px 20px;
+	}
 }
