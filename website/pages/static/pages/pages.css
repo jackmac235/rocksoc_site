@@ -122,6 +122,13 @@ html {
 	display: block;
 }
 
+@media screen and (max-width: 600px) {
+	.break_all {
+		word-break: break-word;
+	}
+}
+
+
 /*Contains the header information*/
 .header {
 	display: grid;
@@ -288,8 +295,6 @@ html {
 		display: block;
 	}
 }
-
-
 
 @media screen and (min-width: 900px) {
 	.index {
