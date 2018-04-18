@@ -86,9 +86,9 @@ html {
 
 .side_title {
 	display: block;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 15px;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	padding-left: 5%;
 }
 
 .side_title:hover {
@@ -97,10 +97,17 @@ html {
 
 .main_welcome_heading {
 	display: block;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.sub_heading_welcome {
+	padding-top: 4%;
+	padding-bottom: 4%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 .side_title_backing {
@@ -123,6 +130,12 @@ html {
 	background-size: 100% 100%;
 }
 
+.side_title_backing_wus_small {
+	background-image: url("images/side_title_backing_wus.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 .side_title_backing_welcome {
 	background-image: url("images/side_title_backing_wus.png");
 	background-repeat: no-repeat;
@@ -138,6 +151,12 @@ html {
 	
 	.side_title_backing_wus {
 		background-image: url("images/side_title_backing_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	
+	.side_title_backing_wus_small {
+		background-image: url("images/side_title_backing2.png");
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 	}
@@ -477,6 +496,7 @@ individual sections separately. For mobile there is padding since the individual
 	padding-right: 4%;
 	padding-bottom: 1.5%;
 	padding-top: 1.5%;
+	text-align: center;
 	/*padding-bottom: 20px;*/
 }
 
@@ -501,6 +521,45 @@ individual sections separately. For mobile there is padding since the individual
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	color: black;
+}
+
+.topnav .icon {
+	display: none;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+	.topnav a {
+		display: none;
+	}
+	
+	.topnav a.icon {
+		float: right;
+		display: block;
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.topnav.responsive {
+		position: relative;
+		background-image: url("images/topnav_big.png");
+	}
+	
+	.topnav.responsive a.icon {
+		position: absolute;
+		right: 5%;
+		top: 2%;
+	}
+	
+	.topnav.responsive a {
+		float: none;
+		display: block;
+	}
+	
+	/*.topnav.responsive.page-link:hover {
+		background-image: url("images/topnav_highlight_big.png");
+	}*/
 }
 
 /*.topnav .icon {

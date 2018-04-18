@@ -20,25 +20,7 @@
 					<a href="/">
 						<img class="logo" src="{% static 'pages/images/fbbanner4.png' %}" alt="RockSoc Logo">
 					</a>
-				</div>
-				<!--<div class="menu">
-					<!--<div class="topnav" id="myTopnav">
-						<a class="page_link" href="/">Home</a>
-						<a class="page_link" href="">News</a>
-						<a class="page_link" href="">Contact</a>
-						<a class="page_link" href="">About</a>
-						<a class="page_link" href="">Events</a>
-						<a class="page_link" href="">Stash</a>
-						<a class="page_link" href="">Membership</a>
-						<a class="page_link" href="">Quote!</a>
-						<a class="page_link" href="">Gallery</a>
-						<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-					</div>
-				</div>-->
-				<!--<div class = "join">
-					<p align="right">Join us on Facebook</p>
-				</div>-->
-				
+				</div>	
 				<!--<div class="social_media mobile_hide">
 					<a href="https://www.facebook.com/groups/camrocksoc/">
 						<img class="fb_logo" src="{% static 'pages/images/fb_black.png' %}" alt="Facebook logo">
@@ -46,7 +28,7 @@
 				</div>-->
 			</div>
 			
-			<div class="topnav">
+			<div class="topnav" id="navigation">
 				<a class="page_link" href="/">Home</a>
 				<a class="page_link" href="/about">About</a>
 				<a class="page_link" href="/events">Events</a>
@@ -57,6 +39,7 @@
 				<a class="page_link" href="/gallery">Gallery</a>
 				<a class="page_link" href="/committee">Committee</a>
 				<a class="page_link" href="/contact">Contact</a>
+				<a href="javascript:void(0);" class="icon" onclick="topnav_func()">&#9776;</a>
 			</div>
 			
 			{% block content %}
@@ -130,5 +113,16 @@
 			.appendTo('#slideshow');
 		},  4500);
 	</script>-->
+	
+	<script>
+		function topnav_func() {
+		var x = document.getElementById("navigation");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+	</script>
 	
 </html>
