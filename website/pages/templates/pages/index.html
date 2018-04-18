@@ -84,34 +84,34 @@
 				
 					{% for event in events %}
 						
-							<!--<hr>-->
-							<table id="event_list">
-								<tr>
-									<td style="width:50%"><h4><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list">{{ event.event_name }}</a></h4></td>
-									<td rowspan="2">
-										<div class="crop_small">
-											<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td><h5>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h5></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<table>
-											<tr>
-												<td style="width:92%"><p class="sidebar_text">{{ event.event_info | truncatechars:100 }}</p></td>
-												<td><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							
-							{% if forloop.last == False %}
-								<hr style="border-color:rgb(100,100,100);border-style:solid">
-							{% endif %}
+						<!--<hr>-->
+						<table id="event_list">
+							<tr>
+								<td style="width:50%"><h4 class="break_all"><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list">{{ event.event_name }}</a></h4></td>
+								<td rowspan="2">
+									<div class="crop_small">
+										<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><h5>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h5></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<table>
+										<tr>
+											<td style="width:92%"><p class="sidebar_text">{{ event.event_info | truncatechars:100 }}</p></td>
+											<td><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						
+						{% if forloop.last == False %}
+							<hr style="border-color:rgb(100,100,100);border-style:solid">
+						{% endif %}
 						
 					{% endfor %}
 				

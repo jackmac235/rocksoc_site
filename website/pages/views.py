@@ -37,8 +37,8 @@ def event_detail(request, pk):
 def news(request):
     return render(request, 'pages/news.html', {})
 
-def membership(request):
-    return render(request, 'pages/membership.html', {})
+def wus(request):
+    return render(request, 'pages/wus.html', {})
 
 def quote(request):
     return render(request, 'pages/quote.html', {})

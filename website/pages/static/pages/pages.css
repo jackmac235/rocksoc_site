@@ -44,6 +44,11 @@ p {
 	font-family: /*Arial*/ Montserrat, sans-serif;
 }
 
+li {
+	color: rgb(150,150,150);
+	font-family: /*Arial*/ Montserrat, sans-serif;
+}
+
 span {
 	color: rgb(150,150,150);
 	font-family: /*Arial*/ Montserrat, sans-serif;
@@ -111,8 +116,20 @@ html {
 	background-size: 100% 100%;
 }
 
+.side_title_backing_wus {
+	background-image: url("images/side_title_backing_wus.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 @media screen and (min-width:800px) {
 	.side_title_backing_big {
+		background-image: url("images/side_title_backing_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	
+	.side_title_backing_wus {
 		background-image: url("images/side_title_backing_big.png");
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -237,7 +254,7 @@ individual sections separately. For mobile there is padding since the individual
 	padding-left: 6%;
 	padding-right: 6%;
 	padding-top: 3%;
-	padding-bottom: 3%;
+	padding-bottom: 8%;
 }
 
 @media screen and (min-width:900px) {	
@@ -271,7 +288,7 @@ individual sections separately. For mobile there is padding since the individual
 	padding-bottom: 6%;
 }
 
-@media screen and (min-width:900px) {	
+@media screen and (min-width:600px) {	
 	.content_big {
 		/*background-color: rgba(0,0,0,0.7);*/
 		background-image: url("images/fabric_big.png");
@@ -438,15 +455,15 @@ individual sections separately. For mobile there is padding since the individual
 	/*background-color: grey;*/
 	overflow: hidden;
 	padding: 10px;
-	width: 80%;
+	width: 75%;
 	margin: auto;
 	background-image: url("images/topnav2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 20px;
-	padding-top: 20px;
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-bottom: 1.5%;
+	padding-top: 1.5%;
 	/*padding-bottom: 20px;*/
 }
 
@@ -543,10 +560,19 @@ table#event_list:hover {
 }
 
 .crop_small {
-	height: 100px;
+	max-height: 150px;
 	overflow: hidden;
 	float: right;
 	padding-left: 10px;
+}
+
+@media screen and (min-width:600px) {
+	.crop_small {
+		max-height: 100px;
+		overflow: hidden;
+		float: right;
+		padding-left: 10px;
+	}
 }
 
 .crop_medium {
@@ -703,5 +729,19 @@ img#event_img:hover {
 		width: 45%;
 		border: 1px solid gray;
 		margin: 20px 20px;
+	}
+}
+
+.page_title {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+}
+
+@media screen and (min-width:600px) {
+	.page_title {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		padding-left: 3%;
 	}
 }
