@@ -100,6 +100,7 @@ html {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .side_title_backing {
@@ -122,6 +123,12 @@ html {
 	background-size: 100% 100%;
 }
 
+.side_title_backing_welcome {
+	background-image: url("images/side_title_backing_wus.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 @media screen and (min-width:800px) {
 	.side_title_backing_big {
 		background-image: url("images/side_title_backing_big.png");
@@ -131,6 +138,12 @@ html {
 	
 	.side_title_backing_wus {
 		background-image: url("images/side_title_backing_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	
+	.side_title_backing_welcome {
+		background-image: url("images/side_title_backing2.png");
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 	}
