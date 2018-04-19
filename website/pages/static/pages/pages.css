@@ -371,11 +371,27 @@ individual sections separately. For mobile there is padding since the individual
 	display: none;
 }
 
+.mobile_show_600 {
+	display: block;
+}
+
 .mobile_hide_800 {
 	display: none;
 }
 
 .mobile_hide_1000 {
+	display: none;
+}
+
+.mobile_show_1100 {
+	display: block;
+}
+
+.mobile_hide_1100 {
+	display: none;
+}
+
+.mobile_show_600-1100 {
 	display: none;
 }
 
@@ -389,6 +405,10 @@ individual sections separately. For mobile there is padding since the individual
 	.mobile_hide_600 {
 		display: block;
 	}
+	
+	.mobile_show_600 {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 800px) {
@@ -399,6 +419,24 @@ individual sections separately. For mobile there is padding since the individual
 
 @media screen and (min-width: 1000px) {
 	.mobile_hide_1000 {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.mobile_show_1100 {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.mobile_hide_1100 {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+	.mobile_show_600-1100 {
 		display: block;
 	}
 }
@@ -648,11 +686,18 @@ table#event_list:hover {
 }
 
 .crop_medium {
-	width: 425px;
-	height: 250px;
+	width: 90%;
+	max-height: 250px;
 	overflow: hidden;
 	float: right;
-	border: 1px solid gray
+	border: 1px solid gray;
+	margin: auto;
+}
+
+.crop_events_mobile {
+	width: 100%;
+	max-height: 250px;
+	overflow: hidden;
 }
 
 .crop_big {
