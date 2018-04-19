@@ -38,7 +38,7 @@ def news(request):
     return render(request, 'pages/news.html', {})
 
 def wus(request):
-    events = Event.objects.filter(date__gte=timezone.now()).order_by('date')[:1]
+    events = Event.objects.filter(date__gte=timezone.now()).order_by('date')
     return render(request, 'pages/wus.html', {'events': events})
 
 def quote(request):
