@@ -131,7 +131,7 @@
 					
 						<table style="width:100%;border-collapse:collapse">
 							<tr>
-								<td style="width:10%"><h3 class="big_date" align="center">{{ event.date | date:"j M" }}</h3></td>
+								<td style="width:8%;padding-right:10px"><h3 class="big_date" align="center">{{ event.date | date:"j M" }}</h3></td>
 								<td style="width:50%">
 									<table>
 										<tr>
@@ -147,6 +147,11 @@
 						<table>
 							<tr>
 								<td><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+							</tr>
+							<tr>
+								{% if event.rockSoc_event %}
+									<td><br><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
+								{% endif %}
 							</tr>
 						</table>
 						
