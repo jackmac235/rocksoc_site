@@ -10,21 +10,114 @@
 				<h1 class="page_title">WAKE UP SCREAMING</h1>
 			</div>
 			
-			<p>Wake Up Screaming or WUS is Cambridge RockSoc's own club night, which runs every third Friday of the month at the <a href="https://www.facebook.com/QClubCambridge/" class="paragraph_link">Q Club</a>,
+			<p>Wake Up Screaming, or WUS, is Cambridge RockSoc's own club night, which runs every third Friday of the month at the <a href="https://www.facebook.com/QClubCambridge/" class="paragraph_link">Q Club</a>,
 			both in an out of term. It's a great chance to meet up with members of RockSoc and the wider rock and metal community in Cambridge.
 			<br>
 			Entry is £3 for <a href="/about" class="paragraph_link">members</a> and £4 for non-members.<p>
 
 			<h3>DJing at WUS</h3>
 
-			<p>Fancy trying your hand at DJing? Contact the WUS officer. If you have no experience we will put you on first set, and if we like you we 
-			will ask you back. You can also join the DJ mailing list by sending an e-mail to dj-subscribe (at) rocksoc org uk. For more information about DJing, see our DJ information page</p>
+			<p>Fancy trying your hand at DJing? Contact the WUS officer who will be able to provide further information. It doesn't matter if you have no experience, we will put you on first set and if we 
+			like you we will ask you back. You would be required to provide your own music, and usually something to play it on, e.g. a laptop. We are always keen to have new DJs!</p>
 
 			<h3>What do we play?</h3>
 
-			<p>What does rock, metal, and alternative mean? Below is a list of top tracks played at WUS, you can also visit the DJ pages and the WUS event pages to see what has been played. Not 
-			playing everything you would like us to? You can always DJ yourself.</p>
+			<p>The remit for WUS is to play rock and alternative music that isn’t otherwise found in Cambridge. We try to maintain a mixture of interesting and esoteric music people might not 
+			have heard before as well as things people will dance to. As such, we try to encourage DJs to play a mixture of things they think will be danceable, that people will enjoy listening 
+			to, and things they find interesting. About the only big thing we try to avoid is music that really isn’t rock or that is widely played elsewhere in Cambridge, for example at 
+			<a href="https://www.facebook.com/TheCallingCambridge/" class="paragraph_link">The Calling</a>, or whatever the current Indie-based night in Cambridge is.</p>
+			
+			<h3>Upcoming WUS Events</h3>
+			
+			<hr>
+
+				{% for event in events %}
+				
+					{% if event.WUS == True %}
+					
+					<div class="mobile_hide_600">
+					
+						<table style="width:100%;border-collapse:collapse">
+							<tr>
+								<td style="width:8%"><h3 class="big_date" align="center">{{ event.date | date:"j M" }}</h3></td>
+								<td style="width:50%">
+									<table>
+										<tr>
+											<td style="border-left: 1px solid white; padding-left: 20px">
+												<h3><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list_big">{{ event.event_name }}</a></h3>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td rowspan="3">
+									<div style="max-height:300px;overflow:hidden">
+										<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2"><br>
+									<table>
+										<tr>
+											<td style="width:400px"><h4>{{ event.date | date:"l jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+											
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2"><p>{{ event.event_info | linebreaks }}</p></td> <!--urlize-->
+							</tr>
+						</table>
+					
+					</div>
+					
+					
+					<div class="mobile_show_600">
+					
+						<table style="width:100%;border-collapse:collapse">
+							<tr>
+								<td style="width:8%;padding-right:10px"><h3 class="big_date" align="center">{{ event.date | date:"j M" }}</h3></td>
+								<td style="width:50%">
+									<table>
+										<tr>
+											<td style="border-left: 1px solid white; padding-left: 20px">
+												<h3 class="break_all"><a href="{% url 'event_detail' pk=event.pk %}" id="event_name_list_big">{{ event.event_name }}</a></h3>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<br>
+						<table>
+							<tr>
+								<td><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+							</tr>
+						</table>
 						
+						<br>
+						
+						<div class="crop_events_mobile">
+							<a href="{% url 'event_detail' pk=event.pk %}"><img src="{{ event.event_image.url }}" style="width:100%" id="event_img"></a>
+						</div>
+					
+						<br>
+						
+						<p class="break_all">{{ event.event_info | linebreaks }}</p> <!--urlize-->
+
+					</div>
+					
+					{% else %}
+						
+						<p>The next WUS event will be put here shortly!</p>
+						
+					{% endif %}
+				
+				{% endfor %}
+			
+			<hr>
+			
 		</div>
 	</div>
 	
