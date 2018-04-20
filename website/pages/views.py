@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
-from .models import Event
+from .models import Event, News
 
 def index(request):
     events = Event.objects.filter(date__gte=timezone.now()).order_by('date')#[:3]
@@ -35,7 +35,19 @@ def event_detail(request, pk):
     return render(request, 'pages/event_detail.html', {'event': event})
 
 def news(request):
-    return render(request, 'pages/news.html', {})
+    news = News.objects.order_by('-date')[:2]
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(news, 2)
+
+    try:
+        events = paginator.page(page)
+    except PageNotAnInteger:
+        events = paginator.page(1)
+    except EmptyPage:
+        events = paginator.page(paginator.num_pages)
+    
+    return render(request, 'pages/news.html', {'news': news})
 
 def wus(request):
     events = Event.objects.filter(date__gte=timezone.now()).order_by('date')

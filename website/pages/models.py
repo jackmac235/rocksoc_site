@@ -24,3 +24,19 @@ class Event(models.Model):
 
     def __str__(self):
         return self.event_name
+
+class News(models.Model):
+    news_title = models.CharField(max_length=200)
+    date = models.DateField(blank=True, null=True)
+    info = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+    class Meta:
+        verbose_name_plural = "News"
+
+    def publish(self):
+        self.date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.news_title

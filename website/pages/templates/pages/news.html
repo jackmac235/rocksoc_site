@@ -10,7 +10,66 @@
 				<h1 class="page_title">NEWS</h1>
 			</div>
 			
-			<p>Here you can find out about some of the goings-on in RockSoc. For the most up-to-date information join us on <a href="https://www.facebook.com/groups/camrocksoc" class="paragraph_link">Facebook!</a></p>
+			<p>Here you can find out about some of the goings-on in RockSoc. For the most up-to-date information join us on <a href="https://www.facebook.com/groups/camrocksoc" class="paragraph_link">Facebook.</a></p>
+			
+			<br>
+			
+			<hr>
+			
+			{% for news in news %}
+				
+				<!--<img class="about_img" src="{{ news.image.url }}"  align="right">
+				
+				<h4>{{ news.date | date:"d/m/y" }}</h4>
+				
+				<h3><a id="event_name_list_big">{{ news.news_title }}</a></h3>
+				
+				<p>{{ news.info | linebreaks }}</p>
+			
+				<table style="width:100%;border-collapse:collapse">
+					<tr>
+						<td style="vertical-align:top">
+							<h4>{{ news.date | date:"d/m/y" }}</h4>
+							<h3>{{ news.news_title }}</h3>
+							<p>{{ news.info | urlize }}</p>
+						</td>
+						<td>
+							<div class="crop_medium">
+								<img src="{{ news.image.url }}" style="width:100%">
+							</div>
+						</td>
+					</tr>
+				</table>
+			
+				<hr>-->
+				
+				<br>
+				
+				<table style="width:100%;border-collapse:collapse">
+					<tr>
+						<td style="width:58%;vertical-align:top"><h4>{{ news.date | date:"d/m/y" }}</h4>
+						<h3>{{ news.news_title }}</h3>
+						<p>{{ news.info | urlize | linebreaks }}</p></td>
+						<!--<td style="width:50%">
+							<table>
+								<tr>
+									<td style="border-left: 1px solid white; padding-left: 20px">
+										<h3>{{ news.news_title }}</h3>
+									</td>
+								</tr>
+							</table>
+						</td>-->
+						<td>
+							<div class="crop_medium" style="margin-bottom:4%">
+								<img src="{{ news.image.url }}" style="width:100%">
+							</div>
+						</td>
+					</tr>
+				</table>
+			
+				<hr>
+			
+			{% endfor %}
 			
 		</div>
 	</div>
