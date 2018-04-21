@@ -38,7 +38,7 @@ def news(request):
     news = News.objects.order_by('-date')
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(news, 1)
+    paginator = Paginator(news, 2)
 
     try:
         news = paginator.page(page)
