@@ -128,12 +128,33 @@
 			<div class="side_title_backing">
 				<a href="/news" style="text-decoration:none"><h3 class="side_title">NEWS</h3></a>
 			</div>
-			<p>The website is currently under refurbishment :)</p>
-			<p>The website is currently under refurbishment :)</p>
-			<p>The website is currently under refurbishment :)</p>
-			<p>The website is currently under refurbishment :)</p>
-			<p>The website is currently under refurbishment :)</p>
-			<p>The website is currently under refurbishment :)</p>
+			
+			<hr>
+			
+			<br>
+			
+			{% for news in news %}
+						
+				<!--<hr>-->
+				<table id="event_list">
+					<tr>
+						<td style="width:50%;vertical-align:top">
+							<h5>{{ news.date | date:"d/m/y" }}</h5>
+							<br><br>
+							<h4 class="break_all"><a href="/news" id="event_name_list">{{ news.news_title }}</a></h4>
+						</td>
+						<td>
+							<div class="crop_small">
+								<a href="/news"><img src="{{ news.image.url }}" style="width:100%" id="event_img"></a>
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+				<p class="sidebar_text">{{ news.info | truncatechars:200 }}</p>
+			
+		{% endfor %}
+		
 		</div>
 	</div>
 	

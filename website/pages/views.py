@@ -6,7 +6,8 @@ from .models import Event, News
 
 def index(request):
     events = Event.objects.filter(date__gte=timezone.now()).order_by('date')#[:3]
-    return render(request, 'pages/index.html', {'events': events})
+    news = News.objects.order_by('-date')[:1]
+    return render(request, 'pages/index.html', {'events': events, 'news': news})
 
 def about(request):
     return render(request, 'pages/about.html', {})
