@@ -71,6 +71,19 @@
 			
 			{% endfor %}
 			
+			<div>
+				<p align="right">Page {{ news.number }} of {{ news.paginator.num_pages }}</p>
+							
+				{% if news.has_previous %}
+					<p align="right">
+					<a href="?page={{ news.previous_page_number }}" class="paragraph_link">< Previous</a></p>
+				{% endif %}
+
+				{% if news.has_next %}
+					<p align="right"><a href="?page={{ news.next_page_number }}" class="paragraph_link">Next ></a></p>
+				{% endif %}
+			</div>
+			
 		</div>
 	</div>
 	

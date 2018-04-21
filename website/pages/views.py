@@ -35,17 +35,17 @@ def event_detail(request, pk):
     return render(request, 'pages/event_detail.html', {'event': event})
 
 def news(request):
-    news = News.objects.order_by('-date')[:2]
+    news = News.objects.order_by('-date')
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(news, 2)
+    paginator = Paginator(news, 1)
 
     try:
-        events = paginator.page(page)
+        news = paginator.page(page)
     except PageNotAnInteger:
-        events = paginator.page(1)
+        news = paginator.page(1)
     except EmptyPage:
-        events = paginator.page(paginator.num_pages)
+        news = paginator.page(paginator.num_pages)
     
     return render(request, 'pages/news.html', {'news': news})
 
