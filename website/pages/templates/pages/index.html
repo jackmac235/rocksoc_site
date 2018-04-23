@@ -6,7 +6,9 @@
 		<div class="content welcome">
 			
 			<div class="slideshow mobile_hide_600">
-				<img src="{% static 'pages/images/panda.jpg' %}"  style="width:100%">
+				<img class="slide" src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
+				<img class="slide" src="{% static 'pages/images/cuthbert.jpg' %}" style="width:100%">
+				<img class="slide" src="{% static 'pages/images/fun.jpg' %}" style="width:100%">
 			</div>
 			
 				<!--<div>
@@ -32,8 +34,12 @@
 			
 			<p>Please check out RockSoc on <a href="https://www.facebook.com/groups/camrocksoc" class="paragraph_link">Facebook</a> for the most up-to-date information.<br></p>
 			
+			<div class="slideshow mobile_show_600">
+				<img src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
+			</div>
+			
 			<!--<div class="mobile_hide_600">-->
-				<div class="side_title_backing_wus_small" style="width:40%">
+				<div class="side_title_backing_wus_small" style="width:45%">
 					<p class="sub_heading_welcome"><a href="/wus" class="paragraph_link">WAKE UP SCREAMING</a></p>
 				</div>
 				
@@ -42,19 +48,19 @@
 
 				<!--<p><a href="/events">Pub meets</a></p>-->
 				
-				<div class="side_title_backing" style="width:40%">
+				<div class="side_title_backing" style="width:45%">
 					<p class="sub_heading_welcome"><a href="/events" class="paragraph_link">PUB MEETS</a></p>
 				</div>
 				
 				<p>We meet weekly on a Thursday at a random pub in Cambridge, hailed as “RockSoc on tour”. To find out where our next pub meet is, keep an eye on the events page.</p>
 				
-				<div class="side_title_backing" style="width:40%">
+				<div class="side_title_backing" style="width:45%">
 					<p class="sub_heading_welcome"><a href="/events" class="paragraph_link">GIGS</a></p>
 				</div>
 				
 				<p>Gigs are organised at least once a term. If you are a band looking for a slot then contact the events officer.</p>
 
-				<div class="side_title_backing_wus_small" style="width:40%">
+				<div class="side_title_backing_wus_small" style="width:45%">
 					<p class="sub_heading_welcome"><a href="/events" class="paragraph_link">OTHER EVENTS</a></p>
 				</div>
 				
@@ -162,5 +168,7 @@
 		
 		</div>
 	</div>
+	
+	
 	
 {% endblock %}

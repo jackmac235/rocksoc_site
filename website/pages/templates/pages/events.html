@@ -104,11 +104,11 @@
 										<tr>
 											<td ><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
 										</tr>
-										<tr>
+										<!--<tr>
 											{% if event.rockSoc_event %}
 												<td><br><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
 											{% endif %}
-										</tr>
+										</tr>-->
 									</table>
 								</td>
 							</tr>
@@ -148,11 +148,11 @@
 							<tr>
 								<td><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
 							</tr>
-							<tr>
+							<!--<tr>
 								{% if event.rockSoc_event %}
 									<td><br><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
 								{% endif %}
-							</tr>
+							</tr>-->
 						</table>
 						
 						<br>
