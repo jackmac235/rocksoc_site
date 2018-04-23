@@ -33,11 +33,13 @@
 			
 			<p>WUS takes place every third Friday of the month. The next WUS will be advertised here.</p>
 			
-			<hr>
+			
 				
 				{% for event in events %}
 					
 					{% if event.WUS == True %}
+					
+					<hr>
 					
 					<div class="mobile_hide_600">
 					
@@ -111,12 +113,14 @@
 						<p class="break_all">{{ event.event_info | linebreaks }}</p> <!--urlize-->
 
 					</div>
+					
+					<hr>
 						
 					{% endif %}
 				
 				{% endfor %}
 			
-			<hr>
+			
 			
 			<!--<p>The next WUS will be put here shortly!</p>
 			

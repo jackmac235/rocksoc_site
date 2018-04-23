@@ -753,7 +753,7 @@ table#event_list:hover {
 	/*margin: auto;*/
 	/*width: 98%;*/
 	/*width: 100%;*/
-	max-height: 150px;
+	max-height: 120px;
 	overflow: hidden;
 	border: 1px solid gray;
 	margin-top: 3%;
@@ -789,6 +789,24 @@ table#event_list:hover {
 		/*width: 98%;*/
 		/*width: 100%;*/
 		max-height: 250px;
+		overflow: hidden;
+		border: 1px solid gray;
+		margin-top: 3%;
+		margin-left: 1%;
+		margin-right: 1%;
+		/*padding-top: 20px;*/
+		/*height: 280px;*/
+		/*box-shadow: 0px 0px 5px 1px gray;*/
+	}	
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px){
+	.slideshow {
+		/*display: block;*/
+		/*margin: auto;*/
+		/*width: 98%;*/
+		/*width: 100%;*/
+		max-height: 160px;
 		overflow: hidden;
 		border: 1px solid gray;
 		margin-top: 3%;
@@ -959,6 +977,10 @@ ol#constitution li{
   border-radius: 11px;
 }*/
 
-.slide {
+.slide1 {
+	display: none;
+}
+
+.slide2 {
 	display: none;
 }
