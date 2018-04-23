@@ -18,7 +18,7 @@
 				</div>
 				
 				<p>Below are listings of all alternative events we know about in Cambridge. If you know of an event not on this list, or are organising one, then contact the webmaster to have it added.</p>
-				<p>Scroll down to see more events. Official RockSoc events are labeled.</p>
+				<p>Scroll down to see more events. </p> <!--Official RockSoc events are labeled.</p>-->
 			
 				<!--<p class="sidebar_text" align="center"><img src="{% static 'pages/images/arrow_up.png' %}" style="width:20px" id="scroll_up"></p>-->
 			
@@ -56,9 +56,9 @@
 									<table>
 										<tr>
 											<td style="width:400px"><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
-											{% if event.rockSoc_event %}
+											<!--{% if event.rockSoc_event %}
 												<td><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
-											{% endif %}
+											{% endif %}-->
 										</tr>
 									</table>
 								</td>

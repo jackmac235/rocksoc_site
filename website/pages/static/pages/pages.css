@@ -56,6 +56,7 @@ span {
 
 a {
 	color: white;
+	text-decoration: none;
 }
 
 a:hover {
@@ -674,6 +675,7 @@ table#event_list:hover {
 	overflow: hidden;
 	float: right;
 	padding-left: 10px;
+	/*border: 1px solid gray;*/
 }
 
 @media screen and (min-width:600px) {
@@ -862,3 +864,28 @@ img#event_img:hover {
 		padding-left: 3%;
 	}
 }
+
+ol#constitution li{
+	margin: 10px 0;
+}
+
+/*.custom-counter {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.custom-counter li {
+  counter-increment: step-counter;
+  margin-bottom: 5px;
+}
+.custom-counter li::before {
+  content: counter(step-counter);
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 80%;
+  background-color: rgb(180, 180, 180);
+  color: black;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 11px;
+}*/

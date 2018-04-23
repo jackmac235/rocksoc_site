@@ -2,7 +2,11 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
+from django.core.mail import EmailMessage
+from django.shortcuts import redirect
+from django.template.loader import get_template
 from .models import Event, News
+from .forms import ContactForm
 
 def index(request):
     events = Event.objects.filter(date__gte=timezone.now()).order_by('date')#[:3]
@@ -11,6 +15,9 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html', {})
+
+def constitution(request):
+    return render(request, 'pages/constitution.html', {})
 
 def events(request):
     #events = Event.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -64,4 +71,34 @@ def committee(request):
     return render(request, 'pages/committee.html', {})
 
 def contact(request):
+    #form_class = ContactForm
+
+    #if request.method == 'POST':
+    #    form = form_class(data=request.POST)
+
+     #   if form.is_valid():
+      #      contact_name = request.POST.get('contact_name', '')
+      #      contact_email = request.POST.get('contact_email', '')
+      #      form_content = request.POST.get('content', '')
+
+    #        template = get_template('pages/contact_template.txt')
+    #        context = {
+    #            'contact_name': contact_name,
+     #           'contact_email': contact_email,
+   #             'form_content': form_content,
+     #       }
+     #       content = template.render(context)
+
+      #      email = EmailMessage(
+      #          "New contact form submission",
+     #           content,
+      #          "Your website" + '',
+      #          ['youremail@gmail.com'],
+      #          headers = {'Reply-To': contact_email }
+     #       )
+
+     #       email.send()
+     #       return redirect('contact')
+            
+    #return render(request, 'pages/contact.html', {'form': form_class})
     return render(request, 'pages/contact.html', {})
