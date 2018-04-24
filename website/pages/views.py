@@ -65,7 +65,7 @@ def quote(request):
     quotes = Quote.objects.order_by('-date')
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(quotes, 5)
+    paginator = Paginator(quotes, 6)
 
     try:
         quotes = paginator.page(page)
