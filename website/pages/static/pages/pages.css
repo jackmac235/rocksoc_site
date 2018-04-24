@@ -1025,25 +1025,67 @@ ol#constitution li{
 }
 
 .speech_bubble_l {
-	background-image:url("images/speech_bubble_l_2.png");
-	
+	background-image:url("images/speech_bubble_l_big.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	padding-top:4%;
 	padding-left:8%;
-	padding-right:10%;
-	padding-bottom:8%;
+	padding-right:12%;
+	padding-bottom:18%;
 }
 
 .speech_bubble_r {
-	background-image:url("images/speech_bubble_r.png");
-	
+	background-image:url("images/speech_bubble_r_big.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	padding-top:4%;
 	padding-left:8%;
-	padding-right:10%;
-	padding-bottom:8%;
+	padding-right:12%;
+	padding-bottom:18%;
+}
+
+@media screen and (min-width: 800px) {
+	.speech_bubble_l {
+		background-image:url("images/speech_bubble_l_2.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		padding-top:4%;
+		padding-left:8%;
+		padding-right:10%;
+		padding-bottom:8%;
+	}
+
+	.speech_bubble_r {
+		background-image:url("images/speech_bubble_r.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		padding-top:4%;
+		padding-left:8%;
+		padding-right:12%;
+		padding-bottom:8%;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+	.speech_bubble_l {
+		background-image:url("images/speech_bubble_l_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		padding-top:4%;
+		padding-left:8%;
+		padding-right:12%;
+		padding-bottom:12%;
+	}
+
+	.speech_bubble_r {
+		background-image:url("images/speech_bubble_r_big.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		padding-top:4%;
+		padding-left:8%;
+		padding-right:12%;
+		padding-bottom:12%;
+	}
 }
 
 .speech_bubble_content {
