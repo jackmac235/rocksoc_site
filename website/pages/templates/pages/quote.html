@@ -10,7 +10,49 @@
 				<h1 class="page_title">QUOTE!</h1>
 			</div>
 			
-			<p>There are some things overheard that need writing down for the benefit of future generations. Those that are un-minuteable for whatever reason can be found here.</p>
+			<p>There are some things that need writing down for the benefit of future generations. Those that are un-minuteable for whatever reason can be found here. Say 
+			something outrageous at one of our events and you might find yourself listed below!</p>
+			
+			{% for quote in quotes %}
+			
+				<div class="{{forloop.counter|divisibleby:2|yesno:'speech_bubble_l,speech_bubble_r'}}">
+					<h2 class="quote">" {{ quote.quote }} "</h2>
+					<p align="right">- {{ quote.name }}<br>{{ quote.date | date:"jS M Y" }}<br></p>
+					<p align="right"><i>{{ quote.info }}</i></p>
+				</div>
+				
+				<!--<div class="speech_bubble_r">
+					<h2 class="quote">" Don't know why I got a pint. I don't really want it. "</h2>
+					<p align="right">- Nick Peer<br>19th Mar 2017<br></p>
+					<p align="right"><i>The only time Nick Peer regretted getting a pint to wash down his whale fish platter at breakfast after a night of heavy drinking.</i></p>
+				</div>
+				
+				<div class="speech_bubble_l">
+					<h2 class="quote">" D: You do realise you're going to have to dress up in vast quantities of yellow feathers on your wedding night. - M: I'm gagging for it. "</h2>
+					<p align="right">- Nick Peer<br>19th Mar 2017<br></p>
+					<p align="right"><i>The only time Nick Peer regretted getting a pint to wash down his whale fish platter at breakfast after a night of heavy drinking.</i></p>
+				</div>
+				
+				<div class="speech_bubble_r">
+					<h2 class="quote">" D: You do realise you're going to have to dress up in vast quantities of yellow feathers on your wedding night. - M: I'm gagging for it. "</h2>
+					<p align="right">- Nick Peer<br>19th Mar 2017<br></p>
+					<p align="right"><i>The only time Nick Peer regretted getting a pint to wash down his whale fish platter at breakfast after a night of heavy drinking.</i></p>
+				</div>-->
+			
+			{% endfor %}
+			
+			<div>
+				<p align="right">Page {{ quotes.number }} of {{ quotes.paginator.num_pages }}</p>
+							
+				{% if quotes.has_previous %}
+					<p align="right">
+					<a href="?page={{ quotes.previous_page_number }}" class="paragraph_link">< Previous</a></p>
+				{% endif %}
+
+				{% if quotes.has_next %}
+					<p align="right"><a href="?page={{ quotes.next_page_number }}" class="paragraph_link">Next ></a></p>
+				{% endif %}
+			</div>
 			
 		</div>
 	</div>

@@ -40,3 +40,19 @@ class News(models.Model):
 
     def __str__(self):
         return self.news_title
+
+class Quote(models.Model):
+    name = models.CharField(max_length=200)
+    date = models.DateField(blank=True, null=True)
+    quote = models.TextField()
+    info = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Quote"
+
+    def publish(self):
+        self.date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.name

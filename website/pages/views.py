@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
-from .models import Event, News
+from .models import Event, News, Quote
 from .forms import ContactForm
 
 def index(request):
@@ -62,7 +62,19 @@ def wus(request):
     return render(request, 'pages/wus.html', {'events': events})
 
 def quote(request):
-    return render(request, 'pages/quote.html', {})
+    quotes = Quote.objects.order_by('-date')
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(quotes, 5)
+
+    try:
+        quotes = paginator.page(page)
+    except PageNotAnInteger:
+        quotes = paginator.page(1)
+    except EmptyPage:
+        quotes = paginator.page(paginator.num_pages)
+        
+    return render(request, 'pages/quote.html', {'quotes': quotes})
 
 def gallery(request):
     return render(request, 'pages/gallery.html', {})
