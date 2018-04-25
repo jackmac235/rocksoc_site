@@ -409,7 +409,7 @@ individual sections separately. For mobile there is padding since the individual
 	}
 	
 	.content_constitution {
-		background-image: url("images/fabric_big.png");
+		background-image: url("images/fabric_bigger.png");
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		border-style: solid;
@@ -423,7 +423,7 @@ individual sections separately. For mobile there is padding since the individual
 	
 	@supports (-ms-ime-align:auto) {
 		.content_constitution {
-			background-image: url("images/fabric_big.png");
+			background-image: url("images/fabric_bigger.png");
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			border-style: solid;
