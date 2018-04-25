@@ -10,13 +10,27 @@
 				<h1 class="page_title">QUOTE!</h1>
 			</div>
 			
-			<p>There are some things that need writing down for the benefit of future generations. Those that are un-minuteable for whatever reason can be found here. Say 
-			something outrageous at one of our events and you might find yourself listed below.</p>
+			{% if not quotes.has_previous %}
+				<p>There are some things that need writing down for the benefit of future generations. Those that are un-minuteable for whatever reason can be found here. Say 
+				something outrageous at one of our events and you might find yourself listed below.</p>
+			{% endif %}
+			
+			<div>
+							
+				{% if quotes.has_previous %}
+					<p align="right">
+					<a href="?page={{ quotes.previous_page_number }}" class="paragraph_link">< Previous</a></p>
+				{% endif %}
+
+				{% if quotes.has_next %}
+					<p align="right"><a href="?page={{ quotes.next_page_number }}" class="paragraph_link">Next ></a></p>
+				{% endif %}
+			</div>
 			
 			{% for quote in quotes %}
 			
 				<div class="{{forloop.counter|divisibleby:2|yesno:'speech_bubble_l,speech_bubble_r'}}">
-					<h2 class="quote">" {{ quote.quote }} "</h2>
+					<h2>" {{ quote.quote }} "</h2>
 					<p align="right">- {{ quote.name }}<br>{{ quote.date | date:"jS M Y" }}<br></p>
 					<p align="right"><i>{{ quote.info }}</i></p>
 				</div>
