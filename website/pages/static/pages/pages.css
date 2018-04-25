@@ -321,6 +321,20 @@ individual sections separately. For mobile there is padding since the individual
 	padding-bottom: 6%;
 }
 
+.content_bigger {
+	/*background-color: rgba(0,0,0,0.7);*/
+	background-image: url("images/fabric2.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-style: solid;
+	border-color: white;
+	border-width: 0px;
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-top: 3%;
+	padding-bottom: 6%;
+}
+
 .content_constitution {
 	background-image: url("images/fabric_extralong.png");
 	background-repeat: no-repeat;
@@ -349,9 +363,38 @@ individual sections separately. For mobile there is padding since the individual
 		padding-bottom: 3%;
 	}
 	
+	.content_bigger {
+		/*background-color: rgba(0,0,0,0.7);*/
+		background-image: url("images/fabric_bigger.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		border-style: solid;
+		border-color: white;
+		border-width: 0px;
+		padding-left: 4%;
+		padding-right: 4%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+	
 	@supports (-ms-ime-align:auto) {
 		.content_big {
 			background-image: url("images/fabric_big.png");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			border-style: solid;
+			border-color: white;
+			border-width: 0px;
+			padding-left: 4%;
+			padding-right: 4%;
+			padding-top: 3%;
+			padding-bottom: 3%;
+			height: 100%;
+		}
+		
+		.content_bigger {
+			/*background-color: rgba(0,0,0,0.7);*/
+			background-image: url("images/fabric_bigger.png");
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			border-style: solid;
