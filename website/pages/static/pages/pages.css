@@ -278,7 +278,7 @@ html {
 individual sections separately. For mobile there is padding since the individual sections don't exist.*/
 .content {
 	/*background-color: rgba(0,0,0,0.7);*/
-	background-image: url("images/fabric.png");
+	background-image: url("images/fabric2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	border-style: solid;
