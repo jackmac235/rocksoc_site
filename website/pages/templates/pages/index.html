@@ -11,6 +11,7 @@
 				<img class="slide1" src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
 			</div>
 			
+			
 				<!--<div>
 					<img src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
 				</div>
@@ -20,6 +21,12 @@
 			
 			<div class="side_title_backing_welcome">
 				<h3 class="main_welcome_heading">WELCOME TO CAMBRIDGE ROCKSOC!</h3>
+			</div>
+			
+			<div class="slideshow mobile_show_600">
+				<img class="slide2" src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
+				<img class="slide2" src="{% static 'pages/images/curry_night.jpg' %}" style="width:100%">
+				<img class="slide2" src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
 			</div>
 			
 			<!--<h3>WELCOME TO CAMBRIDGE ROCKSOC!</h3>-->
@@ -34,11 +41,7 @@
 			
 			<p>Please check out RockSoc on <a href="https://www.facebook.com/groups/camrocksoc" class="paragraph_link">Facebook</a> for the most up-to-date information.<br></p>
 			
-			<div class="slideshow mobile_show_600">
-				<img class="slide2" src="{% static 'pages/images/panda.jpg' %}" style="width:100%">
-				<img class="slide2" src="{% static 'pages/images/curry_night.jpg' %}" style="width:100%">
-				<img class="slide2" src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
-			</div>
+			
 			
 			<!--<div class="mobile_hide_600">-->
 				<div class="side_title_backing_wus_small" style="width:45%">
@@ -162,7 +165,7 @@
 				<!--<p class="sidebar_text">{{ news.info | truncatechars:300 }}</p>-->
 				
 				<table>
-					<td style="width:92%"><p class="sidebar_text">{{ news.info | truncatechars:300 }}</p></td>
+					<td style="width:100%"><p class="sidebar_text">{{ news.info | truncatechars:300 }}</p></td>
 					<td style="vertical-align:bottom"><p><a href="/news" style="text-decoration:none">>></a></p></td>
 				</table>
 			
