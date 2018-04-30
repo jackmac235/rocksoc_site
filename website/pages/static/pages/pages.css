@@ -1007,7 +1007,7 @@ img#event_img:hover {
 
 .about_img {
 	width: 100%;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	margin: auto;
 	margin-bottom: 5%;
 }
@@ -1015,7 +1015,7 @@ img#event_img:hover {
 @media screen and (min-width:800px) {
 	.about_img {
 		width: 45%;
-		border: 1px solid gray;
+		/*border: 1px solid gray;*/
 		margin: 20px 20px;
 	}
 }

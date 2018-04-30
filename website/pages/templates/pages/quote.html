@@ -15,16 +15,18 @@
 				something outrageous at one of our events and you might find yourself listed below.</p>
 			{% endif %}
 			
-			<div>
+			<div>			
+				<p align="right">
 							
 				{% if quotes.has_previous %}
-					<p align="right">
-					<a href="?page={{ quotes.previous_page_number }}" class="paragraph_link">< Previous</a></p>
+					<a href="?page={{ quotes.previous_page_number }}" class="paragraph_link">< Previous &nbsp;</a>
 				{% endif %}
 
 				{% if quotes.has_next %}
-					<p align="right"><a href="?page={{ quotes.next_page_number }}" class="paragraph_link">Next ></a></p>
+					<a href="?page={{ quotes.next_page_number }}" class="paragraph_link"> Next ></a>
 				{% endif %}
+				
+				</p>
 			</div>
 			
 			{% for quote in quotes %}
@@ -56,6 +58,24 @@
 			{% endfor %}
 			
 			<div>
+
+				<p align="right">Page {{ quotes.number }} of {{ quotes.paginator.num_pages }}</p>
+			
+				<p align="right">
+							
+				{% if quotes.has_previous %}
+					<a href="?page={{ quotes.previous_page_number }}" class="paragraph_link">< Previous &nbsp;</a>
+				{% endif %}
+
+				{% if quotes.has_next %}
+					<a href="?page={{ quotes.next_page_number }}" class="paragraph_link"> Next ></a>
+				{% endif %}
+				
+				</p>
+			</div>
+			
+			
+			<!--div>
 				<p align="right">Page {{ quotes.number }} of {{ quotes.paginator.num_pages }}</p>
 							
 				{% if quotes.has_previous %}
@@ -64,9 +84,10 @@
 				{% endif %}
 
 				{% if quotes.has_next %}
-					<p align="right"><a href="?page={{ quotes.next_page_number }}" class="paragraph_link">Next ></a></p>
+					<p align="right">
+					<a href="?page={{ quotes.next_page_number }}" class="paragraph_link">Next ></a></p>
 				{% endif %}
-			</div>
+			</div>-->
 			
 		</div>
 	</div>
