@@ -29,7 +29,7 @@ class News(models.Model):
     news_title = models.CharField(max_length=200)
     date = models.DateField(blank=True, null=True)
     info = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    #image = models.ImageField(upload_to='images/')
 
     class Meta:
         verbose_name_plural = "News"

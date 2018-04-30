@@ -27,11 +27,11 @@
 								<td style="width:58%;vertical-align:top"><h4>{{ news.date | date:"d/m/y" }}</h4>
 								<h3>{{ news.news_title }}</h3>
 								<p>{{ news.info | urlize | linebreaks }}</p></td>
-								<td>
+								<!--<td>
 									<div class="crop_medium" style="margin-bottom:4%">
 										<img src="{{ news.image.url }}" style="width:100%">
 									</div>
-								</td>
+								</td>-->
 							</tr>
 						</table>
 					
@@ -55,9 +55,9 @@
 							</tr>
 						</table>
 						
-						<div class="crop_events_mobile">
+						<!--<div class="crop_events_mobile">
 							<img src="{{ news.image.url }}" style="width:100%; vertical-align:top">
-						</div>	
+						</div>-->	
 				
 						<p>{{ news.info | urlize | linebreaks }}</p>
 				
