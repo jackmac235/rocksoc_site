@@ -22,19 +22,21 @@
 				
 						<br>
 						
-						<table style="width:100%;border-collapse:collapse">
+						<!--<table style="width:100%;border-collapse:collapse">
 							<tr>
-								<td style="width:58%;vertical-align:top"><h4>{{ news.date | date:"d/m/y" }}</h4>
+								<td style="width:58%;vertical-align:top">--><h4 class="big_date">{{ news.date | date:"d/m/y" }}</h4>
 								<h3>{{ news.news_title }}</h3>
-								<p>{{ news.info | urlize | linebreaks }}</p></td>
+								<p>{{ news.info | urlize | linebreaks }}</p><!--</td>-->
 								<!--<td>
 									<div class="crop_medium" style="margin-bottom:4%">
 										<img src="{{ news.image.url }}" style="width:100%">
 									</div>
-								</td>-->
+								</td>
 							</tr>
-						</table>
-					
+						</table>-->
+						
+						<br>
+						
 						<hr>
 					
 					{% endfor %}
@@ -47,13 +49,13 @@
 					
 						<br>
 						
-						<table style="width:100%;border-collapse:collapse">
+						<!--<table style="width:100%;border-collapse:collapse">
 							<tr>
-								<td style="vertical-align:top"><h4>{{ news.date | date:"d/m/y" }}</h4>
+								<td style="vertical-align:top">--><h4 class="big_date">{{ news.date | date:"d/m/y" }}</h4>
 								<h3>{{ news.news_title }}</h3>
-								</td>
+								<!--</td>
 							</tr>
-						</table>
+						</table>-->
 						
 						<!--<div class="crop_events_mobile">
 							<img src="{{ news.image.url }}" style="width:100%; vertical-align:top">
@@ -61,6 +63,8 @@
 				
 						<p>{{ news.info | urlize | linebreaks }}</p>
 				
+						<br>
+						
 						<hr>
 				
 					{% endfor %}
