@@ -23,7 +23,9 @@
 			
 				<!--<p class="sidebar_text" align="center"><img src="{% static 'pages/images/arrow_up.png' %}" style="width:20px" id="scroll_up"></p>-->
 			
+				
 				<img src="{% static 'pages/images/arrow_up.png' %}" style="width:20px;display:block;margin:auto;padding-bottom:10px" id="scroll_up">
+				
 				
 				<hr>
 				
@@ -167,7 +169,7 @@
 						<!--<p class="break_all">{{ event.event_info | truncatechars:200 }}</p>-->
 						
 						<table>
-							<td style="width:92%"><p class="break_all">{{ event.event_info | truncatechars:300 }}</p></td>
+							<td style="width:92%"><p class="break_all">{{ event.event_info | truncatechars:100 }}</p></td>
 							<td style="vertical-align:bottom"><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
 						</table>
 						
