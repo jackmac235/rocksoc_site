@@ -7,6 +7,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rock Salt&subset=latin,latin-ext" type="text/css">
+		<link rel="stylesheet" href="{% static 'pages/lightbox.min.css' %}" type="text/css">
+		<script type="text/javascript" src="{% static 'pages/lightbox-plus-jquery.min.js' %}"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Do+Hyeon|Montserrat">
 		<link rel="stylesheet" href="{% static 'pages/pages.css' %}">
 		<link rel="icon" href="http://www.rocksoc.org.uk/static/img/favicon.png" type="image/png">
@@ -18,7 +20,7 @@
 			<div class="header">
 				<div class="logo_section">
 					<a href="/">
-						<img class="logo" src="{% static 'pages/images/fbbanner4.png' %}" alt="RockSoc Logo">
+						<img class="logo" src="{% static 'pages/images/fbbanner5.png' %}" alt="RockSoc Logo">
 					</a>
 				</div>	
 				<!--<div class="social_media mobile_hide">
@@ -37,7 +39,7 @@
 				<a class="page_link" href="/wus">WUS</a>
 				<a class="page_link" href="/quote">Quote!</a>
 				<a class="page_link" href="/gallery">Gallery</a>
-				<a class="page_link" href="/committee">Committee</a>
+				<!--<a class="page_link" href="/committee">Committee</a>-->
 				<a class="page_link" href="/contact">Contact</a>
 				<a href="javascript:void(0);" class="icon" onclick="topnav_func()">&#9776;</a>
 			</div>
@@ -159,4 +161,46 @@
 		}
 	</script>
 	
+	<script>
+	// Open the Modal
+	function openModal() {
+	  document.getElementById('myModal').style.display = "block";
+	}
+
+	// Close the Modal
+	function closeModal() {
+	  document.getElementById('myModal').style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+</script>
 </html>

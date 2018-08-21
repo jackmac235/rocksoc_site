@@ -57,7 +57,8 @@
 					<p class="sub_heading_welcome"><a href="/events" class="paragraph_link">Pub Meets</a></p>
 				</div>
 				
-				<p>We meet weekly on a Thursday at a random pub in Cambridge, hailed as “RockSoc on tour”. To find out where our next pub meet is, keep an eye on the events page.</p>
+				<p>We meet weekly on a Thursday at a random pub in Cambridge, hailed as “RockSoc on tour”. To find out where our next pub meet is, keep an eye on 
+				the <a href="/events" class = "paragraph_link">events</a> page.</p>
 				
 				<!--hailed as “RockSoc on tour”-->
 				
@@ -71,14 +72,9 @@
 					<p class="sub_heading_welcome"><a href="/events" class="paragraph_link">Gigs and Other Events</a></p>
 				</div>
 				
-				<p>Here are listings of all rock, metal, and alternative events we know about in Cambridge. If you are organising such an event then <a href="/contact" class="paragraph_link">contact</a> the webmaster to have it added.</p>
+				<p>Here are listings of all rock, metal, and alternative events we know about in Cambridge. If you are organising such 
+				an event then <a href="/contact" class="paragraph_link">contact</a> the webmaster to have it added.</p>
 			<!--</div>-->
-			
-			<!--<img src="{% static 'pages/images/.png' %}" style="width:100%">-->
-			
-			<!--<img class="thumbnail" src="{% static 'pages/images/bernard.jpg' %}" alt="Bernard">
-			<img class="thumbnail" src="{% static 'pages/images/towler.jpg' %}" alt="Towler">
-			<img class="thumbnail" src="{% static 'pages/images/hobbs.jpg' %}" alt="Hobbs">-->
 		
 		</div>	
 		<div class="content upcoming_events">
@@ -87,7 +83,7 @@
 				<a href="/events" style="text-decoration:none"><h3 class="side_title">UPCOMING EVENTS</h3></a>
 			</div>
 			
-			<img src="{% static 'pages/images/arrow_up.png' %}" style="width:15px;display:block;margin:auto;padding-bottom:10px" id="scroll_up_small">
+			<!--SCROLL ARROW HERE<img src="{% static 'pages/images/arrow_up.png' %}" style="width:15px;display:block;margin:auto;padding-bottom:10px" id="scroll_up_small">-->
 			
 			<!--<div class="event_window_small_border">-->
 			
@@ -116,7 +112,7 @@
 									<table>
 										<tr>
 											<td style="width:92%"><p class="sidebar_text">{{ event.event_info | truncatechars:100 }}</p></td>
-											<td><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
+											<td><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">[...]</a></p></td>
 										</tr>
 									</table>
 								</td>
@@ -134,7 +130,7 @@
 			<!--</div>-->
 			<hr>
 			
-			<img src="{% static 'pages/images/arrow_down.png' %}" style="width:15px;display:block;margin:auto;padding-top:10px" id="scroll_down_small">
+			<!--SCROLL ARROW HERE<img src="{% static 'pages/images/arrow_down.png' %}" style="width:15px;display:block;margin:auto;padding-top:10px" id="scroll_down_small">-->
 			
 		</div>
 		<div class="content news">
@@ -144,7 +140,7 @@
 			
 			<hr>
 			
-			<br>
+			<!--<br>-->
 			
 			{% for news in news %}
 						
@@ -168,11 +164,33 @@
 				
 				<table>
 					<td style="width:100%"><p class="sidebar_text">{{ news.info | truncatechars:200 }}</p></td>
-					<td style="vertical-align:bottom"><p><a href="/news" style="text-decoration:none">>></a></p></td>
+					<td style="vertical-align:bottom"><p><a href="/news" style="text-decoration:none">[...]</a></p></td>
 				</table>
 			
 		{% endfor %}
 		
+		<hr>
+		
+		</div>
+		<div class="content gallery">
+			<div class="side_title_backing">
+				<a href="/gallery" style="text-decoration:none"><h3 class="side_title">GALLERY</h3></a>
+			</div>
+			
+			<hr>
+			
+			<p class="sidebar_text">On these pages are plenty of images of RockSoc for your viewing pleasure. If you have images
+			you feel should be uploaded please <a href="/contact" class="paragraph_link">contact</a> the
+			webmaster to have them added.</p>
+			
+			<div class="crop_small">
+				<img src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
+			</div>
+			
+			<p class="sidebar_text">Hey</p>
+			
+			<hr>
+			
 		</div>
 	</div>
 	

@@ -24,13 +24,45 @@
 						</td>-->
 					</tr>
 						<div class="mobile_hide_800">
-							<img class="event_img_big" src="{{ event.event_image.url }}" align="right">
+							<!--<img class="event_img_big hover-shadow" src="{{ event.event_image.url }}" onclick="openModal();currentSlide(1)" align="right">-->
+							
+							
+							<!--<div class="row">
+							  <div class="column crop_small">
+								<img src="{% static 'pages/images/panda.jpg' %}" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:100%">
+							  </div>
+							  <div class="column crop_small">
+								<img src="{% static 'pages/images/panda.jpg' %}" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:100%">
+							  </div>
+							</div>-->
+
+							<!-- The Modal/Lightbox -->
+							<!--<div id="myModal" class="modal">
+							  <span class="close cursor" onclick="closeModal()">&times;</span>
+							  <div class="modal-content">
+
+								<div class="mySlides">
+								  <img src="{{ event.event_image.url }}" style="width:100%">
+								</div>
+
+							</div>
+							</div>-->
+							
+							<a href="{{ event.event_image.url }}" data-lightbox="mygallery">
+								<div>
+									<img src="{{ event.event_image.url }}" class="event_img_big hover-shadow" align="right">
+								</div>
+							</a>
+							
 						</div>
+						
 					<tr>
 						<td colspan="2">
 							<table>
 								<tr>
-									<td style="width:450px"><h3>{{ event.date | date:"l jS F Y" }}<br>{{ event.start_time | date:"H:i" }} - {{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h3></td>
+									<td style="width:450px"><h3>{{ event.date | date:"l jS F Y" }}<br>
+									{{ event.start_time | date:"H:i" }} - {{ event.end_time | date:"H:i" }}<br>
+									@ {{ event.event_location }}</h3></td>
 									<!--{% if event.rockSoc_event %}
 										<td style="padding:20px"><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
 									{% endif %}-->
@@ -96,3 +128,46 @@
 	</div>
 	
 {% endblock %}
+
+<script>
+	// Open the Modal
+	function openModal() {
+	  document.getElementById('myModal').style.display = "block";
+	}
+
+	// Close the Modal
+	function closeModal() {
+	  document.getElementById('myModal').style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+</script>

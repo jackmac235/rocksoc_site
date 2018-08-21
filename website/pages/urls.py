@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^gallery/$', views.gallery, name="gallery"),
     url(r'^committee/$', views.committee, name='committee'),
     url(r'^contact/$', views.contact, name="contact"),
+    url(r'^privacy_notice/$', views.privacy_notice, name='privacy_notice'),
 ]

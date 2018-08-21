@@ -114,3 +114,6 @@ def contact(request):
             
     #return render(request, 'pages/contact.html', {'form': form_class})
     return render(request, 'pages/contact.html', {})
+
+def privacy_notice(request):
+    return render(request, 'pages/privacy_notice.html', {})

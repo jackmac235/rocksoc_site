@@ -1,0 +1,60 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="content_constitution">
+			
+			<div class="side_title_backing_big" style="width:100%">
+				<h1 class="page_title">PRIVACY NOTICE</h1>
+			</div>
+			
+			<p>For your information, below are the details of how we manage the personal data of our members.</p>
+			
+			<h3>How we use your personal information – Cambridge University Rock Society</h3>
+			
+			<p>This statement explains how the Cambridge University Rock Society (“we”, “us” and “our”) handles and uses the personal information we collect about our 
+			members for processes relating to our operations and activities.</p>
+			<p>When changes are made to this statement, we will publish the updated version on our website.</p>
+			<p>The controller for your personal information is the Cambridge University Rock Society. The person responsible for data protection within our society is the 
+			Secretary who can be contacted via <a href="mailto:soc-rocksoc-comittee@lists.cam.ac.uk" target="_top" class="paragraph_link">soc-rocksoc-comittee@lists.cam.ac.uk</a>.
+			Please address any emails to the Secretary.</p>
+			
+			<h3>How we use your personal information</h3>
+
+			<p>We collect and process your personal information for the purpose of maintaining your personal details (your name and e-mail address), including ensuring 
+			effective communications with you.</p>
+
+			<p>Our normal legal basis for processing your personal information is your consent, which you gave at the point you become a member of the society and which 
+			you can withdraw at any time, including by resigning your membership.</p>
+
+			<p>We keep your personal information for as long as we need it, and do not retain it after your membership ceases.</p>
+			
+			<h3>How we share your personal information</h3>
+
+			<ul>
+				<li>Personal information is not shared outside of the society's committee</li>
+				<li>We use University IT facilities to store electronic copies of personal information</li>
+			</ul>
+			
+			<p>We may also be subject to a legal requirement (with or without your consent) to share your personal information with the University or a government agency 
+			(such as the police or security services or other statutory authorities with investigatory powers) under special circumstances (e.g. relating to tax, crime or 
+			health and safety). Where feasible and appropriate, we will notify you of our intention to share such information in advance.</p>
+			
+			<h3>Your rights</h3>
+
+			<p>You have the right to access the personal information that we hold about you. You also have the right to ask us to correct any inaccurate personal information 
+			we hold about you, to delete personal information, or otherwise restrict our processing, or to object to processing or communications, or to receive an electronic 
+			copy of the personal information you provided to us. Please note that all of these rights are qualified in various ways.</p>
+
+			<p>If you have questions or concerns about how your personal information is used, please contact us using the above details.</p>
+
+			<p>If you remain unhappy with the way your information is being handled, or with the response received from us, you have the right to lodge a complaint with the 
+			Information Commissioner’s Office at Wycliffe House, Water Lane, Wilmslow, SK9 5AF (<a href="https://ico.org.uk/">https://ico.org.uk</a>).</p>
+
+			<p><i>Last updated: 31st July 2018</i></p>
+		</div>
+	</div>
+	
+{% endblock %}

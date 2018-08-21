@@ -58,7 +58,9 @@
 								<td colspan="2"><br>
 									<table>
 										<tr>
-											<td style="width:400px"><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+											<td style="width:400px"><h4>{{ event.date | date:"D jS F Y" }}
+											<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}
+											<br>@ {{ event.event_location }}</h4></td>
 											<!--{% if event.rockSoc_event %}
 												<td><img src="{% static 'pages/images/rocksoc_logo.png' %}" style="width:100px"></td>
 											{% endif %}-->
@@ -105,7 +107,9 @@
 								<td colspan="2"><br>
 									<table>
 										<tr>
-											<td ><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+											<td ><h4>{{ event.date | date:"D jS F Y" }}
+											<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}
+											<br>@ {{ event.event_location }}</h4></td>
 										</tr>
 										<!--<tr>
 											{% if event.rockSoc_event %}
@@ -149,7 +153,9 @@
 						<br>
 						<table>
 							<tr>
-								<td><h4>{{ event.date | date:"D jS F Y" }}<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}<br>@ {{ event.event_location }}</h4></td>
+								<td><h4>{{ event.date | date:"D jS F Y" }}
+								<br>{{ event.start_time | date:"H:i" }}-{{ event.end_time | date:"H:i" }}
+								<br>@ {{ event.event_location }}</h4></td>
 							</tr>
 							<!--<tr>
 								{% if event.rockSoc_event %}
@@ -170,7 +176,7 @@
 						
 						<table>
 							<td style="width:92%"><p class="break_all">{{ event.event_info | truncatechars:100 }}</p></td>
-							<td style="vertical-align:bottom"><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">>></a></p></td>
+							<td style="vertical-align:bottom"><p><a href="{% url 'event_detail' pk=event.pk %}" style="text-decoration:none">[...]</a></p></td>
 						</table>
 						
 			

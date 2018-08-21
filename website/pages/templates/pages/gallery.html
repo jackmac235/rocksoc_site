@@ -10,7 +10,99 @@
 				<h1 class="page_title">GALLERY</h1>
 			</div>
 			
-			<p>The website is currently under refurbishment :)</p>
+			<p>On these pages are plenty of images of RockSoc for your viewing pleasure. If you have images
+			you feel should be uploaded please <a href="/contact" class="paragraph_link">contact</a> the
+			webmaster to have them added.</p>
+			
+			<a href="{% static 'pages/images/panda.jpg' %}" data-lightbox="mygallery">
+				<div class="column crop_small">
+					<img src="{% static 'pages/images/panda.jpg' %}" class="hover-shadow" style="width:100%">
+				</div>
+			</a>
+			<a href="{% static 'pages/images/curry_night.jpg' %}" data-lightbox="mygallery">
+				<div class="column crop_small">
+					<img src="{% static 'pages/images/curry_night.jpg' %}" class="hover-shadow" style="width:100%">
+				</div>
+			</a>
+			<a href="{% static 'pages/images/wus_event.jpg' %}" data-lightbox="mygallery">
+				<div class="column crop_small">
+					<img src="{% static 'pages/images/wus_event.jpg' %}" class="hover-shadow" style="width:100%">
+				</div>
+			</a>
+			<a href="{% static 'pages/images/hobbs.jpg' %}" data-lightbox="mygallery">
+				<div class="column crop_small">
+					<img src="{% static 'pages/images/hobbs.jpg' %}" class="hover-shadow" style="width:100%">
+				</div>
+			</a>
+			
+			<!-- Images used to open the lightbox -->
+			<!--<div class="row">
+			  <div class="column crop_small">
+				<img src="{% static 'pages/images/panda.jpg' %}" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:100%">
+			  </div>
+			  <div class="column crop_small">
+				<img src="{% static 'pages/images/curry_night.jpg' %}" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:100%">
+			  </div>
+			  <div class="column crop_small">
+				<img src="{% static 'pages/images/wus_event.jpg' %}" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:100%">
+			  </div>
+			  <div class="column crop_small">
+				<img src="{% static 'pages/images/hobbs.jpg' %}" onclick="openModal();currentSlide(4)" class="hover-shadow" style="width:100%">
+			  </div>
+			</div>-->
+
+			<!-- The Modal/Lightbox -->
+			<div id="myModal" class="modal">
+			  <span class="close cursor" onclick="closeModal()">&times;</span>
+			  <div class="modal-content">
+
+				<div class="mySlides">
+				  <!--<div class="numbertext">1 / 4</div>-->
+				  <img src="{% static 'pages/images/panda.jpg' %}" style="max-height:850px">
+				</div>
+
+				<div class="mySlides">
+				  <!--<div class="numbertext">2 / 4</div>-->
+				  <img src="{% static 'pages/images/curry_night.jpg' %}" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+				  <!--<div class="numbertext">3 / 4</div>-->
+				  <img src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+				  <!--<div class="numbertext">4 / 4</div>-->
+				  <img src="{% static 'pages/images/hobbs.jpg' %}" style="max-height:850px">
+				</div>
+
+				<!-- Next/previous controls -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<!-- Caption text -->
+				<div class="caption-container">
+				  <p id="caption"></p>
+				</div>
+
+				<!-- Thumbnail image controls 
+				<div class="column">
+				  <img class="demo" src="{% static 'pages/images/hobbs.jpg' %}" onclick="currentSlide(1)" alt="Nature" style="width:100%">
+				</div>
+
+				<div class="column">
+				  <img class="demo" src="{% static 'pages/images/panda.jpg' %}" onclick="currentSlide(2)" alt="Snow" style="width:100%">
+				</div>
+
+				<div class="column">
+				  <img class="demo" src="{% static 'pages/images/hobbs.jpg' %}" onclick="currentSlide(3)" alt="Mountains" style="width:100%">
+				</div>
+
+				<div class="column">
+				  <img class="demo" src="{% static 'pages/images/hobbs.jpg' %}" onclick="currentSlide(4)" alt="Lights" style="width:100%">
+				</div>-->
+			  </div>
+			</div>
 			
 		</div>
 	</div>
