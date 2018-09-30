@@ -68,13 +68,15 @@ a:hover {
 }
 
 a#event_name_list {
-	color: rgb(150,150,150);
+	/*color: rgb(150,150,150);*/
+	color: rgba(250,250,250,0.8);
 	text-decoration: none;
 }
 
 a#event_name_list:hover {
 	/*color: white;*/
-	color: rgba(250,250,250,0.8);
+	color: rgba(150,150,150,0.8);
+	transition: 0.4s; 
 }
 
 a#event_name_list_big {
@@ -84,7 +86,8 @@ a#event_name_list_big {
 }
 
 a#event_name_list_big:hover {
-	color: rgb(150,150,150);
+	color: rgb(150,150,150,0.8);
+	transition: 0.4s;
 }
 
 html {
@@ -814,6 +817,11 @@ table#event_list:hover {
 	/*box-shadow: 0px 0px 5px 1px white;*/
 }
 
+.crop_gallery {
+	max-height: 100px;
+	overflow: hidden;
+}
+
 .crop_small {
 	max-height: 150px;
 	overflow: hidden;
@@ -965,9 +973,9 @@ table#event_list:hover {
 	.event_window {
 		/*width: 100%;*/
 		/*height: 550px;*/
-		height: 260px;
-		overflow: auto;
-		visibility: hidden;
+		/*height: 260px;*/
+		/*overflow: auto;*/
+		visibility: visible;
 		/*margin-right: -18px;*/
 	}
 }
@@ -1049,7 +1057,14 @@ img#event_img:hover {
 	.about_img {
 		width: 45%;
 		/*border: 1px solid gray;*/
-		margin: 20px 20px;
+		margin: 20px;
+		border: 1px solid gray;
+	}
+	
+	.about_img_2 {
+		width: 45%;
+		margin: 20px 40px 20px 10px;
+		border: 1px solid gray;
 	}
 }
 

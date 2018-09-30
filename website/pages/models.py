@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-
 class Event(models.Model):
     #author = models.ForeignKey('auth.User')
     event_name = models.CharField(max_length=200)
@@ -15,6 +14,7 @@ class Event(models.Model):
     rockSoc_event = models.BooleanField(default=False)
     WUS = models.BooleanField(default=False)
     event_image = models.ImageField(upload_to='images/')
+    image_caption = models.TextField(blank=True, default="")
     link_to_Facebook_event = models.CharField(max_length=200, blank=True, null=True)
 
     def publish(self):
@@ -56,3 +56,35 @@ class Quote(models.Model):
 
     def __str__(self):
         return self.name
+
+class Album(models.Model):
+    album_name = models.CharField(max_length=200)
+    description = models.TextField(blank=True, default="")
+
+    def __str__(self):
+        return self.album_name
+
+class Image(models.Model):
+    album = models.ForeignKey(Album, default=None)
+    image = models.ImageField(upload_to="images/", blank=True, null=True)
+    caption = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.album.album_name + ' Image'
+
+#class Category(models.Model):
+#    name = models.CharField(max_length=32)
+
+    #class Meta:
+    #    verbose_name_plural = "Categories"
+    
+   # def __str__(self):
+    #    return self.name
+
+#class Item(models.Model):
+ #   name = models.CharField(max_length=32)
+  #  description = models.TextField()
+   # category = models.ForeignKey(Category)
+
+  #  def __str__(self):
+   #     return self.name

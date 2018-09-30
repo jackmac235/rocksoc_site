@@ -1,15 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, get_object_or_404
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
-from .models import Event, News, Quote
-from .forms import ContactForm
+from .models import Event, News, Quote, Album, Image
+from django.template import RequestContext
+#from .forms import ContactForm
 
 def index(request):
-    events = Event.objects.filter(date__gte=timezone.now()).order_by('date')#[:3]
+    events = Event.objects.filter(date__gte=timezone.now()).order_by('date')[:1]
     news = News.objects.order_by('-date')[:1]
     return render(request, 'pages/index.html', {'events': events, 'news': news})
 
@@ -76,11 +76,21 @@ def quote(request):
         
     return render(request, 'pages/quote.html', {'quotes': quotes})
 
-def gallery(request):
-    return render(request, 'pages/gallery.html', {})
+#def gallery(request):
+#    albums = Album.objects.order_by('album_name')
+        #return render(request, 'pages/gallery.html', {'albums': albums})
+#    return render_to_response('pages/gallery.html', {'albums' : albums})
 
-def committee(request):
-    return render(request, 'pages/committee.html', {})
+def gallery(request):
+
+    #return render(request, 'pages/gallery.html', {'categories': Category.objects.all})
+    albums = Album.objects.all
+    
+    return render(request, 'pages/gallery.html', {'albums': albums})
+    #return render(request, 'pages/gallery.html', {'albums': Album.objects.all})
+
+#def committee(request):
+#    return render(request, 'pages/committee.html', {})
 
 def contact(request):
     #form_class = ContactForm

@@ -13,27 +13,41 @@
 			<p>On these pages are plenty of images of RockSoc for your viewing pleasure. If you have images
 			you feel should be uploaded please <a href="/contact" class="paragraph_link">contact</a> the
 			webmaster to have them added.</p>
-			
-			<a href="{% static 'pages/images/panda.jpg' %}" data-lightbox="mygallery">
-				<div class="column crop_small">
-					<img src="{% static 'pages/images/panda.jpg' %}" class="hover-shadow" style="width:100%">
-				</div>
-			</a>
-			<a href="{% static 'pages/images/curry_night.jpg' %}" data-lightbox="mygallery">
-				<div class="column crop_small">
-					<img src="{% static 'pages/images/curry_night.jpg' %}" class="hover-shadow" style="width:100%">
-				</div>
-			</a>
-			<a href="{% static 'pages/images/wus_event.jpg' %}" data-lightbox="mygallery">
-				<div class="column crop_small">
-					<img src="{% static 'pages/images/wus_event.jpg' %}" class="hover-shadow" style="width:100%">
-				</div>
-			</a>
-			<a href="{% static 'pages/images/hobbs.jpg' %}" data-lightbox="mygallery">
+
+			<!--<a href="{% static 'pages/images/hobbs.jpg' %}" data-lightbox="gallery1">
 				<div class="column crop_small">
 					<img src="{% static 'pages/images/hobbs.jpg' %}" class="hover-shadow" style="width:100%">
 				</div>
-			</a>
+			</a>-->
+			
+			<!--{% for category in categories %}
+				<h2>{{ category.name }}</h2>
+				{% for item in category.item_set.all %}
+					<h3>{{ item.name }}</h3>
+					<p>{{ item.description }}</p>
+					<p>{{ item.category.name }}</p>
+				{% endfor %}
+			{% endfor %}-->
+			
+			{% for album in albums %}
+				<h2>{{ album.album_name }}</h2>
+				<img src="{% static 'pages/images/horizontal_divider.png' %}" style="width:100%;margin-bottom:20px">
+				{% for img in album.image_set.all %}
+					<!--<img src="{{ img.image.url }}">-->
+					<a href="{{ img.image.url }}" data-lightbox="gallery1" data-title="{{ img.caption }}">
+						<!--<div class="column crop_small">-->
+						<div class="crop_gallery" style="width:15%;display:inline-block;border:1px solid gray">
+							<img src="{{ img.image.url }}" class="hover-shadow" style="width:100%">
+						</div>
+					</a>
+				{% endfor %}
+			{% endfor %}
+			
+			<!--{% for item in items %}
+				<h3>{{ item.name }}</h3>
+				<p>{{ item.description }}</p>
+				<p>{{ item.category.name }}</p>
+			{% endfor %}-->
 			
 			<!-- Images used to open the lightbox -->
 			<!--<div class="row">
@@ -51,39 +65,39 @@
 			  </div>
 			</div>-->
 
-			<!-- The Modal/Lightbox -->
+			<!-- The Modal/Lightbox 
 			<div id="myModal" class="modal">
 			  <span class="close cursor" onclick="closeModal()">&times;</span>
 			  <div class="modal-content">
 
 				<div class="mySlides">
-				  <!--<div class="numbertext">1 / 4</div>-->
+				  <div class="numbertext">1 / 4</div>
 				  <img src="{% static 'pages/images/panda.jpg' %}" style="max-height:850px">
 				</div>
 
 				<div class="mySlides">
-				  <!--<div class="numbertext">2 / 4</div>-->
+				  <div class="numbertext">2 / 4</div>
 				  <img src="{% static 'pages/images/curry_night.jpg' %}" style="width:100%">
 				</div>
 
 				<div class="mySlides">
-				  <!--<div class="numbertext">3 / 4</div>-->
+				  <div class="numbertext">3 / 4</div>
 				  <img src="{% static 'pages/images/wus_event.jpg' %}" style="width:100%">
 				</div>
 
 				<div class="mySlides">
-				  <!--<div class="numbertext">4 / 4</div>-->
+				  <div class="numbertext">4 / 4</div>
 				  <img src="{% static 'pages/images/hobbs.jpg' %}" style="max-height:850px">
-				</div>
+				</div>-->
 
 				<!-- Next/previous controls -->
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>-->
 
 				<!-- Caption text -->
-				<div class="caption-container">
+				<!--<div class="caption-container">
 				  <p id="caption"></p>
-				</div>
+				</div>-->
 
 				<!-- Thumbnail image controls 
 				<div class="column">
