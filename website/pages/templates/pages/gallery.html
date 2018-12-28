@@ -10,7 +10,7 @@
 				<h1 class="page_title">GALLERY</h1>
 			</div>
 			
-			<p>On these pages are plenty of images of RockSoc for your viewing pleasure. If you have images
+			<p>On these pages you'll find images of RockSoc for your viewing pleasure. If you have images
 			you feel should be uploaded please <a href="/contact" class="paragraph_link">contact</a> the
 			webmaster to have them added.</p>
 
@@ -29,19 +29,69 @@
 				{% endfor %}
 			{% endfor %}-->
 			
-			{% for album in albums %}
+			<!--{% for album in albums %}
 				<h2>{{ album.album_name }}</h2>
-				<img src="{% static 'pages/images/horizontal_divider.png' %}" style="width:100%;margin-bottom:20px">
+				<p>{{ album.description }}</p>
 				{% for img in album.image_set.all %}
-					<!--<img src="{{ img.image.url }}">-->
-					<a href="{{ img.image.url }}" data-lightbox="gallery1" data-title="{{ img.caption }}">
-						<!--<div class="column crop_small">-->
+					<a href="{{ img.image.url }}" data-lightbox="{{ album.album_name }}" data-title="{{ img.caption }}">
 						<div class="crop_gallery" style="width:15%;display:inline-block;border:1px solid gray">
 							<img src="{{ img.image.url }}" class="hover-shadow" style="width:100%">
 						</div>
 					</a>
 				{% endfor %}
-			{% endfor %}
+			{% endfor %}-->
+			
+			
+			<div style="width:100%">
+				<!--<tr>
+					{% for album_category in album_categories %}
+						<th style="width:33%;background-image:url({% static 'pages/images/gallery_title_background.png' %});background-repeat: no-repeat;background-size: 100% 100%;">
+							<h2>{{ album_category.album_category_name }}</h2>
+						</th>
+					{% endfor %}	
+				</tr>-->
+				
+					{% for album_category in album_categories %}
+						{% with album_category.album_set.all|first as album %}
+							<!--<p>{{ album.album_name }}</p>-->
+							{% with album.image_set.all|first as img %}
+								<div style="width:32%;padding:5px;float:left;text-align:center">
+									<!--<a href="{{ img.image.url }}" data-lightbox="{{ album.album_name }}" data-title="{{ img.caption }}">-->
+										<div class="crop_gallery" style="width:100%;display:inline-block;
+										background-image:url({% static 'pages/images/gallery_title_background.png' %}),url({{ img.image.url }});
+										background-position: center, left top;
+										background-repeat: no-repeat; 
+										background-size: 100%, 100%;">
+											<!--<img src="{{ img.image.url }}" class="hover-shadow" style="width:100%;visibility:hidden">-->
+											
+											<div style="margin-top: 27%">
+												<h2>{{ album_category.album_category_name }}</h2>
+											</div>
+										
+											<img src="{{ img.image.url }}" style="width:100%;visibility:hidden">
+										
+										</div>
+									<!--</a>-->
+								</div>
+							{% endwith %}
+						{% endwith %}
+					{% endfor %}
+					
+						<!--{% for album in album_category.album_set.all %}
+							{% with album.image_set.all|first as image %}
+								<p>{{ image.caption }}</p>
+							{% endwith %}
+							{% for img in album.image_set.all %}
+								<a href="{{ img.image.url }}" data-lightbox="{{ album.album_name }}" data-title="{{ img.caption }}">
+									<div class="crop_gallery" style="width:15%;display:inline-block;border:1px solid gray">
+										<img src="{{ img.image.url }}" class="hover-shadow" style="width:100%">
+									</div>
+								</a>
+							{% endfor %}
+						{% endfor %}-->
+			</div>
+			
+			
 			
 			<!--{% for item in items %}
 				<h3>{{ item.name }}</h3>

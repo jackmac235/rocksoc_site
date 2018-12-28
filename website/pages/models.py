@@ -57,7 +57,17 @@ class Quote(models.Model):
     def __str__(self):
         return self.name
 
+class Album_Category(models.Model):
+    album_category_name = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Album_categories"
+    
+    def __str__(self):
+        return self.album_category_name
+
 class Album(models.Model):
+    album_category = models.ForeignKey(Album_Category, default=None)
     album_name = models.CharField(max_length=200)
     description = models.TextField(blank=True, default="")
 
@@ -67,7 +77,7 @@ class Album(models.Model):
 class Image(models.Model):
     album = models.ForeignKey(Album, default=None)
     image = models.ImageField(upload_to="images/", blank=True, null=True)
-    caption = models.TextField(blank=True, null=True)
+    caption = models.TextField(blank=True, default="")
 
     def __str__(self):
         return self.album.album_name + ' Image'

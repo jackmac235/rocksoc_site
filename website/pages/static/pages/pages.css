@@ -818,7 +818,7 @@ table#event_list:hover {
 }
 
 .crop_gallery {
-	max-height: 100px;
+	max-height: 220px;
 	overflow: hidden;
 }
 
@@ -1058,13 +1058,13 @@ img#event_img:hover {
 		width: 45%;
 		/*border: 1px solid gray;*/
 		margin: 20px;
-		border: 1px solid gray;
+		/*border: 1px solid gray;*/
 	}
 	
 	.about_img_2 {
 		width: 45%;
 		margin: 20px 40px 20px 10px;
-		border: 1px solid gray;
+		/*border: 1px solid gray;*/
 	}
 }
 

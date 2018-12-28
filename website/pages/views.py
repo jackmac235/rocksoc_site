@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
-from .models import Event, News, Quote, Album, Image
+from .models import Event, News, Quote, Album_Category, Album, Image
 from django.template import RequestContext
 #from .forms import ContactForm
 
@@ -83,11 +83,11 @@ def quote(request):
 
 def gallery(request):
 
-    #return render(request, 'pages/gallery.html', {'categories': Category.objects.all})
-    albums = Album.objects.all
+    #albums = Album.objects.all
+    album_categories = Album_Category.objects.all
     
-    return render(request, 'pages/gallery.html', {'albums': albums})
-    #return render(request, 'pages/gallery.html', {'albums': Album.objects.all})
+    #return render(request, 'pages/gallery.html', {'albums': albums})
+    return render(request, 'pages/gallery.html', {'album_categories': album_categories})
 
 #def committee(request):
 #    return render(request, 'pages/committee.html', {})

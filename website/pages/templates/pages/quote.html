@@ -35,7 +35,7 @@
 			{% for quote in quotes %}
 			
 				<div class="{{forloop.counter|divisibleby:2|yesno:'speech_bubble_l,speech_bubble_r'}}">
-					<h2>"{{ quote.quote }}"</h2>
+					<h2>" {{ quote.quote }} "</h2>
 					<p align="right">- {{ quote.name }}<br>{{ quote.date | date:"jS M Y" }}<br></p>
 					<p align="right"><i>{{ quote.info }}</i></p>
 				</div>
