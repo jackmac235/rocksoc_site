@@ -106,6 +106,11 @@ html {
 	color: gray;
 }
 
+.gallery_title:hover {
+	color: gray;
+	transition: 0.4s;
+}
+
 .main_welcome_heading {
 	display: block;
 	padding-top: 2%;
@@ -667,14 +672,17 @@ individual sections separately. For mobile there is padding since the individual
 .topnav {
 	/*background-color: grey;*/
 	overflow: hidden;
-	padding: 10px;
-	width: 75%;
+	/*padding: 10px;*/
+	/*width: 75%;*/
+	width: 63%;
 	margin: auto;
 	background-image: url("images/topnav2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	padding-left: 4%;
-	padding-right: 4%;
+	/*padding-left: 4%;
+	padding-right: 4%;*/
+	padding-left: 2%;
+	padding-right: 2%;
 	padding-bottom: 1.5%;
 	padding-top: 1.5%;
 	text-align: center;
@@ -818,7 +826,10 @@ table#event_list:hover {
 }
 
 .crop_gallery {
-	max-height: 220px;
+	/*min-height: 220px;
+	max-height: 220px;*/
+	height: 200px;
+	/*max-height: 500px;*/
 	overflow: hidden;
 }
 
