@@ -81,13 +81,22 @@ def quote(request):
         #return render(request, 'pages/gallery.html', {'albums': albums})
 #    return render_to_response('pages/gallery.html', {'albums' : albums})
 
-def gallery(request):
+def album_categories(request):
 
     #albums = Album.objects.all
     album_categories = Album_Category.objects.all
     
     #return render(request, 'pages/gallery.html', {'albums': albums})
-    return render(request, 'pages/gallery.html', {'album_categories': album_categories})
+    return render(request, 'pages/album_categories.html', {'album_categories': album_categories})
+
+def album_category(request, pk):
+    #album_category = get_object_or_404(Album_Category, pk=pk)
+    #album_category = Album_Category.objects.get(id=pk)
+    #albums = Album_Category.objects.get(id=pk).album_set.all
+    album_category = Album_Category.objects.get(id=pk)
+    #albums = Album_Category.objects.all()
+    return render(request, 'pages/albums.html', {'album_category': album_category})
+    #return render(request, 'pages/albums.html', {'albums': albums})
 
 #def committee(request):
 #    return render(request, 'pages/committee.html', {})

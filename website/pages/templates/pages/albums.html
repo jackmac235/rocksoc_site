@@ -1,0 +1,34 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="content_big">
+		
+			<div class="side_title_backing_big" style="width:100%">
+				<h1 class="page_title">{{ album_category.album_category_name }}</h1>
+			</div>
+			
+			<p>On these pages you'll find images of RockSoc for your viewing pleasure. If you have images
+			you feel should be uploaded please <a href="/contact" class="paragraph_link">contact</a> the
+			webmaster to have them added.</p>
+		
+			{% for album in album_category.album_set.all %}
+			
+				<h2>{{ album.album_name }}</h2>
+				
+				{% for img in album.image_set.all %}
+					
+					<img src="{{ img.image.url }}" style="width:100%">
+				
+				{% endfor %}
+				
+				<img src="">
+			
+			{% endfor %}
+		
+		</div>
+	</div>
+	
+{% endblock %}
